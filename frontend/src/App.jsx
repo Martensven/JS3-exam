@@ -1,12 +1,20 @@
 import { useState } from 'react'
-import './Style/App.css'
+import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './Features/Header/header.jsx'
+import { Start } from './Features/Start/start.jsx';
+import { Recipes } from './Features/Recipes/recipes.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Recept</h1>
+      <Header></Header>
+
+      <Routes>
+        <Route path='/' element={<Start />}></Route>
+        <Route path='/recipes' element={<Recipes />}></Route>
+      </Routes>
     </>
   )
 }
