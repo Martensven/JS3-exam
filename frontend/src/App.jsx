@@ -12,8 +12,8 @@ function App() {
       <Header></Header>
 
       <Routes>
-        <Route path='/JS3-exam/' element={<Start />}></Route>
-        <Route path='/JS3-exam/recipes' element={<Recipes />}></Route>
+        <Route path='/' element={<Start />}></Route>
+        <Route path='/recipes' element={<Recipes />}></Route>
       </Routes>
     </>
   )
