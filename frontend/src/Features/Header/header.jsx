@@ -5,8 +5,8 @@ export const Header = () => {
 
     return (
         <nav className="headerContainer">
-            <Link to='/'><button>Start</button></Link>
-            <Link to='/recipes'><button>Recept</button></Link>
+            <Link to='/JS3-exam/'><button>Start</button></Link>
+            <Link to='/JS3-exam/recipes'><button>Recept</button></Link>
         </nav>
     )
 } 
