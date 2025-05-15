@@ -1,0 +1,27 @@
+.headerContainer {
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+    background-color: lavender;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.headerContainer button {
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    font-size: x-large;
+    outline: none;
+    border: none;
+}
+
+.headerContainer button:hover {
+    color: black;
+}
+
+.headerContainer button:active {
+    color: black;
+}
