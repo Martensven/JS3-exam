@@ -5,18 +5,65 @@ export default {
     title: 'Recipe',
     type: 'document',
     fields: [
-        //title (string)
-        //img (image)
-        //categories som refererar till category.js (array)
-        //description (text)
-        //tid att laga (number)
-        //antal ingredienser (Kan den räkna hur många som finns i receptet?)
-        //antal portioner (string)
-        //betyg som refererar till review (string)
-        //ingredienser (array) 
-        //instruktioner (array)
-        //author med referens till author.js (string)
+        {
+            name: 'title',
+            title: 'Title',
+            type: 'string'
+        },
+        {
+            name: 'image',
+            title: 'Image',
+            type: 'image'
+        },
+        {
+            name: 'categories',
+            type: 'array',
+            of:
+                [
+                    {
+                        type: 'reference',
+                        to: [{ type: 'category' }]
+                    }
+                ],
+            title: 'Categories'
+        },
+        {
+            name: 'description',
+            title: 'Description',
+            type: 'text',
+        },
+        {
+            name: 'timeToCook',
+            title: 'TimeToCook',
+            type: 'number'
+        },
+        {
+            name: 'portions',
+            title: 'Portions',
+            type: 'number'
+        },
+        {
+            name: 'ingredients',
+            title: 'Ingredients',
+            type: 'array',
+            of: [
+                {
+                    type: 'string'
+                }
+            ]
+        },
+        {
+            name: 'instructions',
+            title: 'Instructions',
+            type: 'array',
+            of: [
+                {
+                    type: 'text'
+                }
+            ]
+        },
 
+        //betyg som refererar till review (string)(nice to have)
         //Vi har inte med reviews här, det ligger som en egen komponent
     ]
 }

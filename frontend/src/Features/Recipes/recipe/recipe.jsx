@@ -30,36 +30,38 @@ export const Recipes = () => {
                 </div>
 
 
+                <section className='listContainer'>
+                    <div className="ingredientContainer">
+                        <ul className="ingredients">
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                            <li className="ingredient">Vatten 1 DL</li>
+                        </ul>
+                    </div>
 
-                <div className="ingredientContainer">
-                    <ul className="ingredients">
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                        <li className="ingredient">Vatten 1 DL</li>
-                    </ul>
-                </div>
+                    <div className="instructionsContainer">
+                        <ul className="instructions">
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                            <li className="instruction">Gör så</li>
+                        </ul>
+                    </div>
+                </section>
 
-                <div className="instructionsContainer">
-                    <ul className="instructions">
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                        <li className="instruction">Gör så</li>
-                    </ul>
-                </div>
 
             </main>
         </>
