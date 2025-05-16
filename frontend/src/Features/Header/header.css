@@ -1,0 +1,35 @@
+.headerNav {
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+    height: 10vh;
+    width: 100%;
+}
+
+.headerNav button {
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    font-size: x-large;
+    outline: none;
+    border: none;
+}
+
+.headerNav button:hover {
+    color: black;
+}
+
+.headerNav button:active {
+    color: black;
+}
+
+.headerLogo {
+    height: 10vh;
+    background-color: rgb(0, 66, 0);
+    color: rgb(255, 255, 226);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: itim;
+}
