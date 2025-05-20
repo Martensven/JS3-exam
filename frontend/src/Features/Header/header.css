@@ -1,5 +1,6 @@
-.headerNav {
-    font-family: monospace;
+@media (max-width: 412px) {
+    .headerNav {
+    font-family: Inter;
     text-align: center;
     margin: 0;
     height: 10vh;
@@ -7,29 +8,63 @@
 }
 
 .headerNav button {
-    margin: 5px;
-    width: 100px;
-    height: 40px;
-    font-size: x-large;
+    margin: 10px;
+    width: 120px;
+    height: 40px; 
+    font-size: large;
     outline: none;
-    border: none;
+    border: 2px solid rgba(102, 217, 211, 1);
+    border-radius: 3px;
+    background-color: white;
+
+    box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
 }
 
 .headerNav button:hover {
-    color: black;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
 }
 
 .headerNav button:active {
     color: black;
 }
 
-.headerLogo {
-    height: 10vh;
-    background-color: rgb(0, 66, 0);
+.headerContainer {
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(90deg, rgba(43, 128, 143, 1), rgba(23, 73, 82, 1) );
     color: rgb(255, 255, 226);
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    font-size: xx-large;
-    font-family: itim;
+    justify-content: space-between;
 }
+
+.LogoContainer {
+    width: 55vw;
+    text-align: center;
+    font-family: "Atma", system-ui;
+    margin: 20px;
+}
+
+.logoH1 {
+    margin: 0;
+    padding: 0;
+    font-size: xx-large;
+    line-height: 20px;
+}
+
+.logoParagrah {
+    text-align: left;
+    margin: 0;
+    padding-left:30px;
+}
+.kockmössan {
+    width: 90px;
+    border-radius: 50%;
+    margin: 20px;
+    rotate: 10deg;
+}
+
+}
+
