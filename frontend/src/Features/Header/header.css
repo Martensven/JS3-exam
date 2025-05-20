@@ -1,4 +1,4 @@
-@media (max-width: 412px) {
+@media (max-width: 450px) {
     .headerNav {
     font-family: Inter;
     text-align: center;
@@ -31,8 +31,8 @@
 
 .headerContainer {
     width: 100%;
-    height: 15vh;
-    background: linear-gradient(90deg, rgba(43, 128, 143, 1), rgba(23, 73, 82, 1) );
+    height: 20vh;
+    background: linear-gradient(90deg, rgba(43, 128, 143, 1), rgb(23, 73, 82) );
     color: rgb(255, 255, 226);
     display: flex;
     flex-direction: row;
