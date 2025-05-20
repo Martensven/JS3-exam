@@ -63,7 +63,6 @@ export default {
             ]
         },
 
-        //betyg som refererar till review (string)(nice to have)
-        //Vi har inte med reviews här, det ligger som en egen komponent
+
     ]
 }
