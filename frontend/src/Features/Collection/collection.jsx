@@ -1,45 +1,55 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { client } from "../../sanityClient";
+import { Link } from "react-router-dom";
 import './collection.css';
-import { client } from '../../sanityClient';
-import { useState, useEffect } from 'react';
 
 export const Collection = () => {
-    const [recipes, setRecipes] = useState(null);
+    const { categoryTitle } = useParams();
+    const [recipes, setRecipes] = useState([]);
+    
     useEffect(() => {
-        client.fetch(
-            `*[_type == 'recipe' && _id == '18ce8632-5279-402e-981e-5d1d47ed7234']{
-            title,
-            image {asset->
-            {url}
-            },
-            categories[]->{
-                title
-            },
-            description,
-            timeToCook
-        }`
-        )
-        .then((data) => setRecipes(data[0]))
-        .catch(console.error);
-    }, []);
-
-    if (!recipes) return <h3>Laddar...</h3>
-
-    return (
-    <main>
-        <h1>Frukost</h1>
+        const fetchRecipes = async () => {
+            const query = `*[_type == "recipe" && references(*[_type == "category" && title == $categoryTitle][0]._id)]{
+                _id,
+                title,
+                image {asset-> {url}},
+                description,
+                timeToCook
+                }`;
+                
+                const fetched = await client.fetch(query, { categoryTitle });
+                setRecipes(fetched);
+            };
+            
+            fetchRecipes();
+        }, [categoryTitle]);
         
-        <div className='card-container'>
-            <img className='card-img' src={recipes.image.asset.url} alt={recipes.title} />
-            <div className='card-txtbox'>
-                <h1 className='card-title'>{recipes.title}</h1>
-                <h2 className='card-desc'>{recipes.description}</h2>
-                <h2 className='card-timer'>Tillagningstid: {recipes.timeToCook} min</h2>
-                <h2 className='card-etc'>Hello</h2>
-                <div className='card-right'>
-                    <h2 className='card-rating'>⭐⭐⭐⭐⭐</h2>
-                </div>
-            </div>
-        </div>
-    </main>
-)
-}
+        return (
+            <main>
+                <h1 className="collection-title">{categoryTitle}</h1>
+
+                {recipes.map((recipe, index) => (
+                    <section key={index}>
+                        <Link className="link-cards" to={`/recipe/${recipe._id}`}>
+                           <div className="card-container">
+                            {recipe.image?.asset?.url && (
+                                <img className="card-img" src={recipe.image.asset.url} alt="{recipe.title}" />
+                            )}
+                            <div className="card-txtbox">
+                                <h1 className="card-title">{recipe.title}</h1>
+                                <h2 className="card-desc">{recipe.description}</h2>
+                                <h2 className="card-timer">Tillagningstid: {recipe.timeToCook} min</h2>
+                                <div className="card-right">
+                                    <h2 className="card-rating">⭐⭐⭐⭐⭐</h2>
+                                </div>
+                            </div>
+                           </div>
+                        </Link>
+                    </section>
+                ))}
+            </main>
+  );
+};
+
+export default Collection;

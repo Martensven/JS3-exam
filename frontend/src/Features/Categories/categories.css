@@ -1,0 +1,28 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+  background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url("../../assets/lasagne.jpg");
+    background-size: cover;
+    
+  /* background: linear-gradient(
+    0deg,
+    rgba(23, 73, 82, 1) 0%,
+    rgba(43, 128, 143, 1) 50%,
+    rgba(43, 128, 143, 1) 100%
+  ); */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 8px;
+}

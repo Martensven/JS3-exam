@@ -8,7 +8,7 @@ export const Header = () => {
             <div className='headerLogo'>🍴<i>ReceptFrossa</i>🍴</div>
             <nav className="headerNav">
                 <Link to='/JS3-exam/'><button>🏠</button></Link>
-                <Link to='/JS3-exam/collection'><button>🏠</button></Link>
+                <Link to='/JS3-exam/categories'><button>🏠</button></Link>
                 <Link to='/JS3-exam/recipes'><button>📋</button></Link>
                 <Link to='/JS3-exam/recipes/example'><button>🍔</button></Link>
             </nav>
