@@ -72,6 +72,7 @@ export const Categories = () => {
             </Link>
           )
         )}
+
       </section>
     </main>
   );
