@@ -51,7 +51,11 @@ export const Categories = () => {
 
   return (
     <main className="categoriesContainer">
+      <section className="categoriesButton">
+      <Link><button>Skapa recept</button></Link>
+      </section>
       <section className="grid-container">
+        
         {categories.map(
           (
             category,

@@ -1,6 +1,8 @@
 .categoriesContainer {
   display: flex;
+  flex-direction: column;
   width: 100%;
+  background-color: #2B808F
 }
 
 .categories-container a {
@@ -8,10 +10,36 @@
   text-decoration: none;
 }
 
-.grid-container {
-  width: 100%;
+.categoriesButton {
+  display: flex;
+  justify-content: center;
+ 
+
+}
+
+.categoriesButton button{
+  background-color: rgb(255, 255, 255);
+  border: 3px solid rgb(102, 217, 211);
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  
   
 }
+
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  
+}
+
 
 .grid-item {
   background-size: cover;
