@@ -1,28 +1,33 @@
+.categoriesContainer {
+  display: flex;
+  width: 100%;
+}
+
+.categories-container a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
-  gap: 10px;
-  max-width: 400px;
-  margin: 20px auto;
+  width: 100%;
+  
 }
 
 .grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8rem;
-  background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url("../../assets/lasagne.jpg");
-    background-size: cover;
-    
-  /* background: linear-gradient(
-    0deg,
-    rgba(23, 73, 82, 1) 0%,
-    rgba(43, 128, 143, 1) 50%,
-    rgba(43, 128, 143, 1) 100%
-  ); */
+  background-size: cover;
+  background-position: center;
   color: white;
-  padding: 20px;
+  text-shadow: 0 0 5px black;
+  font-size: 2rem;
   text-align: center;
-  font-size: 1.2em;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  height: 400px;
+  
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
 }
