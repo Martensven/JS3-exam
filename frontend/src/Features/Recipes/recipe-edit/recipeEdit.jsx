@@ -86,6 +86,7 @@ export const RecipesEdit = () => {
         if (newInstruction.trim()) {
             setInstructions([...instructions, newInstruction]);
             setNewInstruction("");
+
         }
     };
 
@@ -95,7 +96,19 @@ export const RecipesEdit = () => {
 
     const handleImageUpload = async () => {
         if (!newImageFile) {
-            return recipe.image.asset.url;
+            // Om det redan finns en bild, skapa korrekt referens
+            if (recipe?.image?.asset?._id) {
+                return {
+                    _type: 'image',
+                    asset: {
+                        _type: 'reference',
+                        _ref: recipe.image.asset._id,
+                    }
+                };
+            }
+
+            // Ingen gammal bild? Kanske returnera null eller en placeholder
+            return null;
         }
 
         try {
@@ -110,9 +123,10 @@ export const RecipesEdit = () => {
         } catch (err) {
             console.error("Bilduppladdning misslyckades", err);
             alert("Kunde inte ladda upp bilden.");
-            return recipe?.image || null;
+            return null;
         }
     };
+
 
     const handleSave = async () => {
         const imageObj = await handleImageUpload();
@@ -160,7 +174,6 @@ export const RecipesEdit = () => {
                     const file = e.target.files[0];
                     setNewImageFile(file);
                     if (file) {
-
                         const reader = new FileReader();
                         reader.onloadend = () => {
                             setImageUrl(reader.result);
