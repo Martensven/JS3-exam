@@ -58,7 +58,7 @@ export const Categories = () => {
             index // Mappa över kategorierna och skapa en länk för varje kategori
           ) => (
             <Link
-              to={`/categories/category/${encodeURIComponent(category.title)}`} // Länk till kategorisidan, skickar med kategorins titel i URL:en
+              to={`collection/${encodeURIComponent(category.title)}`} // Länk till kategorisidan, skickar med kategorins titel i URL:en
               key={index}
               className="grid-item"
               style={{
