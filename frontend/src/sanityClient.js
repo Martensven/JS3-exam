@@ -9,3 +9,6 @@ export const client = createClient({
     token: sanityWriteToken,
     useCdn: true,
 })
+
+export default client
+

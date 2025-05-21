@@ -1,4 +1,6 @@
 # JS3-exam
+Grupp 5. 
+
 
 
 ## Trello 
@@ -9,3 +11,4 @@ https://www.figma.com/board/VMopHh0UvwroPnxCL9j4oo/Figjam-Planering?node-id=0-1&
 
 ## Figma Prototyp
 https://www.figma.com/proto/ziBREz9eCj0Cm7m3f6Q6oD/Design---Prototyp?page-id=0%3A1&node-id=7-7&p=f&viewport=420%2C259%2C0.72&t=HHwH3lYJa6NREYQ4-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A7
+
