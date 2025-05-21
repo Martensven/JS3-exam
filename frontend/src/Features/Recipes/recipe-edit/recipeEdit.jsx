@@ -5,7 +5,6 @@ import { client } from '../../../sanityClient';
 export const RecipesEdit = () => {
     const [recipe, setRecipe] = useState(null);
     const [allCategories, setAllCategories] = useState([]);
-
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [timeToCook, setTimeToCook] = useState(0);
@@ -15,7 +14,6 @@ export const RecipesEdit = () => {
     const [selectedCategoryTitles, setSelectedCategoryTitles] = useState([]);
     const [imageUrl, setImageUrl] = useState("");
     const [newImageFile, setNewImageFile] = useState(null);
-
     const [newIngredient, setNewIngredient] = useState("");
     const [newInstruction, setNewInstruction] = useState("");
 
@@ -46,7 +44,7 @@ export const RecipesEdit = () => {
                 setIngredients(recipe.ingredients || []);
                 setInstructions(recipe.instructions || []);
                 setSelectedCategoryTitles(recipe.categories.map(c => c.title));
-                setImageUrl(recipe.image?.asset?.url || "");
+                setImageUrl(recipe.image?.asset?.url || "https://upload.wikimedia.org/wikipedia/commons/a/a3/Image-not-found.png?20210521171500");
                 setAllCategories(categories);
             } catch (err) {
                 console.error(err);
@@ -97,7 +95,7 @@ export const RecipesEdit = () => {
 
     const handleImageUpload = async () => {
         if (!newImageFile) {
-            return recipe?.image || null;
+            return recipe.image.asset.url;
         }
 
         try {
@@ -117,7 +115,7 @@ export const RecipesEdit = () => {
     };
 
     const handleSave = async () => {
-        const imageObj = await handleImageUpload(); // <-- alltid anropa
+        const imageObj = await handleImageUpload();
         if (!imageObj) {
             alert("Kunde inte spara recept utan bild.");
             return;
@@ -162,6 +160,7 @@ export const RecipesEdit = () => {
                     const file = e.target.files[0];
                     setNewImageFile(file);
                     if (file) {
+
                         const reader = new FileReader();
                         reader.onloadend = () => {
                             setImageUrl(reader.result);
