@@ -13,14 +13,11 @@ function App() {
       <Header></Header>
 
       <Routes>
-        <Route path="/" element={<Start />}></Route>
-        <Route path="/recipes" element={<RecipeCard />}></Route>
-        <Route path="/recipes/example" element={<Recipes />}></Route>
-        <Route path="/categories" element={<Categories />}></Route>
-        <Route
-          path="/categories/category/:category"
-          element={<CategoryPage />}
-        ></Route>
+        <Route path="/JS3-Exam/" element={<Start />}></Route>
+        <Route path="/JS3-Exam/recipes" element={<RecipeCard />}></Route>
+        <Route path="/JS3-Exam/recipes/example" element={<Recipes />}></Route>
+        <Route path="/JS3-Exam/categories" element={<Categories />}></Route>
+        
       </Routes>
     </>
   );
