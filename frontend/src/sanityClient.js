@@ -1,6 +1,4 @@
 import { createClient } from '@sanity/client'
-import { sanityWriteToken } from './env.js'
-
 
 export const client = createClient({
     projectId: 'ugclfvqj',
