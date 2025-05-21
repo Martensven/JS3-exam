@@ -1,30 +1,40 @@
 import './style.css';
 import { useState, useEffect } from "react";
 import { client } from '../../../sanityClient';
+import { useParams } from 'react-router';
+import { Link } from 'react-router';
 
 export const Recipes = () => {
+    const { id } = useParams(); // <-- Hämta receptets ID från URL
     const [recipe, setRecipe] = useState(null);
+
     useEffect(() => {
-        client.fetch(
-            `*[_type == 'recipe' && _id == '85d21bd5-26e6-4635-87e0-002bcaf02de6']{
-            title,
-            image {asset->
-            {url}
-            },
-            categories[]->{
-                title
-            },
-            description,
-            timeToCook,
-            portions,
-            ingredients[],
-            instructions[],
-            _id
-        }`
-        )
-            .then((data) => setRecipe(data[0]))
-            .catch(console.error);
-    }, []);
+        if (!id) return;
+
+        const fetchRecipe = async () => {
+            try {
+                const data = await client.fetch(
+                    `*[_type == "recipe" && _id == $id][0]{
+                        title,
+                        image { asset->{url} }, 
+                        categories[]->{ title },
+                        description,
+                        timeToCook,
+                        portions,
+                        ingredients[],
+                        instructions[],
+                        _id
+                    }`,
+                    { id }
+                );
+                setRecipe(data);
+            } catch (error) {
+                console.error("Fel vid hämtning av recept:", error);
+            }
+        };
+
+        fetchRecipe();
+    }, [id]);
 
     //om recipe fortfarande är null, visa ett laddningsmeddelande
     if (!recipe) return <h3>Laddar...</h3>
@@ -81,8 +91,8 @@ export const Recipes = () => {
                         </ul>
                     </div>
                 </section>
-
-            </main>
+                <Link to={`/JS3-exam/recipes/edit/${recipe._id}`}><button>Redigera</button></Link>
+            </main >
         </>
     )
 }

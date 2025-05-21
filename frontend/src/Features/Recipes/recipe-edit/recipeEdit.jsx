@@ -1,8 +1,11 @@
 import './style.css';
 import { useState, useEffect } from "react";
 import { client } from '../../../sanityClient';
+import { useParams, useNavigate } from 'react-router';
 
 export const RecipesEdit = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const [recipe, setRecipe] = useState(null);
     const [allCategories, setAllCategories] = useState([]);
     const [title, setTitle] = useState("");
@@ -18,10 +21,12 @@ export const RecipesEdit = () => {
     const [newInstruction, setNewInstruction] = useState("");
 
     useEffect(() => {
+        if (!id) return;
+
         const fetchData = async () => {
             try {
                 const [recipeData, categories] = await Promise.all([
-                    client.fetch(`*[_type == 'recipe' && _id == '85d21bd5-26e6-4635-87e0-002bcaf02de6']{
+                    client.fetch(`*[_type == "recipe" && _id == $id][0]{
                         title,
                         image {asset->{url, _id}},
                         categories[]->{_id, title},
@@ -31,11 +36,14 @@ export const RecipesEdit = () => {
                         ingredients[],
                         instructions[],
                         _id
-                    }`),
+                    }`,
+                        { id: id }
+                    ),
+
                     client.fetch(`*[_type == 'category']{_id, title}`)
                 ]);
 
-                const recipe = recipeData[0];
+                const recipe = recipeData;
                 setRecipe(recipe);
                 setTitle(recipe.title);
                 setDescription(recipe.description);
@@ -52,7 +60,7 @@ export const RecipesEdit = () => {
         };
 
         fetchData();
-    }, []);
+    }, [id]);
 
     const handleCategoryToggle = (title) => {
         setSelectedCategoryTitles((prev) =>
@@ -147,7 +155,10 @@ export const RecipesEdit = () => {
                 categories: updatedCategories
             })
             .commit()
-            .then(() => alert("Ändringar sparade!"))
+            .then(() => {
+                alert("Ändringar sparade!");
+                navigate(`/JS3-exam/recipes/${recipe._id}`);
+            })
             .catch((err) => {
                 console.error(err);
                 alert("Fel vid sparande.");
