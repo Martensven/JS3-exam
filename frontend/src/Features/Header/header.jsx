@@ -14,6 +14,7 @@ export const Header = () => {
             </div>
 
             <nav className="headerNav">
+ headerFeature
                 <NavButtons />
                 {/* <Link to='/JS3-exam/'> <button>🏠</button></Link>
                 <Link to='/JS3-exam/recipes'> <button>📋</button></Link>
