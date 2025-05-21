@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
@@ -8,9 +9,7 @@ import { Recipes } from './Features/Recipes/recipe/recipe.jsx';
 import { Collection } from './Features/Collection/collection.jsx';
 import { Categories } from './Features/Categories/categories.jsx';
 
-
 function App() {
-
   return (
     <>
       <Header></Header>
@@ -22,10 +21,9 @@ function App() {
         <Route path='/JS3-exam/recipes/example' element={<Recipes />}></Route>
         <Route path='/JS3-exam/categories' element={<Categories />}></Route>
         
-
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
