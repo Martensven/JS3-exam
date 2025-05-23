@@ -66,6 +66,7 @@ export const Recipes = () => {
                         <p className='timeToCook'>⏲️{recipe.timeToCook} min</p>
                         <p className="numberOfIngredients">🍌{recipe.ingredients.length}</p>
                         <p className='numberOfPortions'>🍽️{recipe.portions}</p>
+                        <AverageRatingTwo recipeId={recipe._id} />
                     </div>
                     <div className="average-rating-container">
                         <AverageRatingTwo recipeId={id} />
@@ -96,6 +97,7 @@ export const Recipes = () => {
                         </ul>
                     </div>
                 </section>
+
                 <Link to={`/JS3-exam/recipes/edit/${recipe._id}`}><button>Redigera</button></Link>
                 <ReviewForm recipeId={id} />
                 <ReviewList recipeId={id} />

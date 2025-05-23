@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
-import { Header } from './Features/Header/header.jsx'
+import { Header } from './Features/Header/header.jsx';
+import { Footer } from './Features/Footer/footer.jsx';
 import { Start } from './Features/Start/start.jsx';
 import { Recipes } from './Features/Recipes/recipe/recipe.jsx';
 import { RecipesEdit } from './Features/Recipes/recipe-edit/recipeEdit.jsx';
