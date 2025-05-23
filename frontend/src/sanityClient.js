@@ -1,5 +1,5 @@
 import { createClient } from '@sanity/client'
-import { sanityWriteToken } from './env.js'
+// import { sanityWriteToken } from './env.js'
 
 
 export const client = createClient({
