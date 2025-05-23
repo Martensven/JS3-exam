@@ -3,8 +3,9 @@
     font-family: Inter;
     text-align: center;
     margin: 0;
-    height: 10vh;
+    height: 6vh;
     width: 100%;
+    
 }
 
 .headerNav button {
@@ -16,7 +17,6 @@
     border: 2px solid rgba(102, 217, 211, 1);
     border-radius: 3px;
     background-color: white;
-
     box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
 }
 
