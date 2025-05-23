@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  
-  
+  margin-bottom: 1rem;
 }
 
 .categories-container a {
@@ -14,8 +13,6 @@
 .categoriesButton {
   display: flex;
   justify-content: center;
- 
-
 }
 
 .categoriesButton button {
@@ -30,33 +27,29 @@
   box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
 }
 
-.grid-container {
+.categoryContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-  
+  align-items: center;
+  gap: 1rem;
 }
 
-
-.grid-item {
+.categoryCard{
   font-family: 'inter', sans-serif;
+  border-radius: 15px;
   background-size: cover;
   background-position: center;
   color: white;
-  text-shadow: 0 0 5px black;
   font-size: 2rem;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-  height: 400px;
+  width: 80%;
+  height: 200px;
   text-decoration: none;
-
-}
-
-.grid-item:hover {
-  transform: scale(1.02);
+  box-shadow: 1px 1px 5px rgb(26, 26, 49);
 }
