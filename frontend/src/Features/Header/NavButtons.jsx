@@ -1,6 +1,5 @@
 import { Link } from 'react-router'
 
-
 export const NavButtons = () => {
   return (
     <section>

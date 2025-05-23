@@ -2,14 +2,14 @@ import "./categories.css";
 import { useState, useEffect } from "react";
 import client from "../../sanityClient.js";
 import { Link } from "react-router-dom";
-import AOS from "aos";
+import Aos from "aos";
 import "aos/dist/aos.css";
 
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    AOS.init({
+    Aos.init({
       duration: 800,
     });
     const fetchCategories = async () => {
@@ -50,7 +50,10 @@ export const Categories = () => {
   };
 
   return (
+
     <main className="categoriesContainer">
+      <Link className="grid-item"><button>Skapa nytt recept</button></Link>
+
       <section className="grid-container">
         {categories.map(
           (
@@ -58,13 +61,12 @@ export const Categories = () => {
             index // Mappa över kategorierna och skapa en länk för varje kategori
           ) => (
             <Link
-              to={`collection/${encodeURIComponent(category.title)}`} // Länk till kategorisidan, skickar med kategorins titel i URL:en
+              to={`/JS3-exam/categories/collection/${encodeURIComponent(category.title)}`} // Länk till kategorisidan, skickar med kategorins titel i URL:en
               key={index}
               className="grid-item"
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${
-                  imageMap[category.title] || "/images/default.jpg" // Använd en standardbild om ingen bild finns
-                })`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${imageMap[category.title] || "/images/default.jpg" // Använd en standardbild om ingen bild finns
+                  })`,
               }}
               data-aos="fade-up" // AOS animation
             >

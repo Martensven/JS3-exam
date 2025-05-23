@@ -8,7 +8,7 @@ import AverageRatingTwo from "../Reviews/AverageRatingTwo/AverageRatingTwo";
 export const Collection = () => {
     const { categoryTitle } = useParams();
     const [recipes, setRecipes] = useState([]);
-    
+
     useEffect(() => {
         const fetchRecipes = async () => {
             const query = `*[_type == "recipe" && references(*[_type == "category" && title == $categoryTitle][0]._id)]{
@@ -18,22 +18,22 @@ export const Collection = () => {
                 description,
                 timeToCook
                 }`;
-                
-                const fetched = await client.fetch(query, { categoryTitle });
-                setRecipes(fetched);
-            };
-            
-            fetchRecipes();
-        }, [categoryTitle]);
-        
-        return (
-            <main>
-                <h1 className="collection-title">{categoryTitle}</h1>
 
-                {recipes.map((recipe, index) => (
-                    <section key={index}>
-                        <Link className="link-cards" to={`/recipe/${recipe._id}`}>
-                           <div className="card-container">
+            const fetched = await client.fetch(query, { categoryTitle });
+            setRecipes(fetched);
+        };
+
+        fetchRecipes();
+    }, [categoryTitle]);
+
+    return (
+        <main>
+            <h1 className="collection-title">{categoryTitle}</h1>
+
+            {recipes.map((recipe, index) => (
+                <section key={index}>
+                    <Link className="link-cards" to={`/JS3-exam/recipes/${recipe._id}`}>
+                        <div className="card-container">
                             {recipe.image?.asset?.url && (
                                 <img className="card-img" src={recipe.image.asset.url} alt="{recipe.title}" />
                             )}
@@ -45,12 +45,12 @@ export const Collection = () => {
                                     <AverageRatingTwo recipeId={recipe._id} />
                                 </div>
                             </div>
-                           </div>
-                        </Link>
-                    </section>
-                ))}
-            </main>
-  );
+                        </div>
+                    </Link>
+                </section>
+            ))}
+        </main>
+    );
 };
 
 export default Collection;

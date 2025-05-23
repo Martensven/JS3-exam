@@ -1,8 +1,11 @@
 import './style.css';
 import { useState, useEffect } from "react";
 import { client } from '../../../sanityClient';
+import { useParams, useNavigate } from 'react-router';
 
 export const RecipesEdit = () => {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const [recipe, setRecipe] = useState(null);
     const [allCategories, setAllCategories] = useState([]);
     const [title, setTitle] = useState("");
@@ -18,10 +21,12 @@ export const RecipesEdit = () => {
     const [newInstruction, setNewInstruction] = useState("");
 
     useEffect(() => {
+        if (!id) return;
+
         const fetchData = async () => {
             try {
                 const [recipeData, categories] = await Promise.all([
-                    client.fetch(`*[_type == 'recipe' && _id == '85d21bd5-26e6-4635-87e0-002bcaf02de6']{
+                    client.fetch(`*[_type == "recipe" && _id == $id][0]{
                         title,
                         image {asset->{url, _id}},
                         categories[]->{_id, title},
@@ -31,11 +36,14 @@ export const RecipesEdit = () => {
                         ingredients[],
                         instructions[],
                         _id
-                    }`),
+                    }`,
+                        { id: id }
+                    ),
+
                     client.fetch(`*[_type == 'category']{_id, title}`)
                 ]);
 
-                const recipe = recipeData[0];
+                const recipe = recipeData;
                 setRecipe(recipe);
                 setTitle(recipe.title);
                 setDescription(recipe.description);
@@ -52,7 +60,7 @@ export const RecipesEdit = () => {
         };
 
         fetchData();
-    }, []);
+    }, [id]);
 
     const handleCategoryToggle = (title) => {
         setSelectedCategoryTitles((prev) =>
@@ -147,7 +155,10 @@ export const RecipesEdit = () => {
                 categories: updatedCategories
             })
             .commit()
-            .then(() => alert("Ändringar sparade!"))
+            .then(() => {
+                console.log("Ändringar sparade!");
+                navigate(`/JS3-exam/recipes/${recipe._id}`);
+            })
             .catch((err) => {
                 console.error(err);
                 alert("Fel vid sparande.");
@@ -213,11 +224,20 @@ export const RecipesEdit = () => {
                     <ul>
                         {ingredients.map((ingredient, index) => (
                             <li key={index}>
-                                {ingredient}
+                                <input
+                                    type="text"
+                                    value={ingredient}
+                                    onChange={(e) => {
+                                        const updated = [...ingredients];
+                                        updated[index] = e.target.value;
+                                        setIngredients(updated);
+                                    }}
+                                />
                                 <button onClick={() => handleRemoveIngredient(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
+
                     <input
                         type="text"
                         placeholder="Ny ingrediens"
@@ -227,21 +247,31 @@ export const RecipesEdit = () => {
                     <button onClick={handleAddIngredient}>➕ Lägg till</button>
                 </div>
 
+
                 <div className="instructionsContainer">
                     <h3>Instruktioner</h3>
                     <ul>
                         {instructions.map((instruction, index) => (
                             <li key={index}>
-                                {instruction}
+                                <input
+                                    type="text"
+                                    value={instruction}
+                                    onChange={(e) => {
+                                        const updated = [...instructions];
+                                        updated[index] = e.target.value;
+                                        setInstructions(updated);
+                                    }}
+                                />
                                 <button onClick={() => handleRemoveInstruction(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
+
                     <input
                         type="text"
                         placeholder="Ny instruktion"
                         value={newInstruction}
-                        onChange={(e) => setNewInstruction(e.target.value)}
+                        onChange={(e) => setNewinstruction(e.target.value)}
                     />
                     <button onClick={handleAddInstruction}>➕ Lägg till</button>
                 </div>
