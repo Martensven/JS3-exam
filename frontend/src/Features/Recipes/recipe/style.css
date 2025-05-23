@@ -4,12 +4,12 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: solid black 1px;
     margin: 10px;
 }
 
 .recipeMain img {
-    width: 300px;
+    width: 90%;
+    border-radius: 5px;
 }
 
 .recipeMain ul {
@@ -17,64 +17,44 @@
     padding-inline-start: 0;
 }
 
-.ingredientContainer {
-    border: solid black 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 50px;
-    width: 90%;
+.goback-buttons {
+    display: flex; 
+    flex-direction: row;
 }
 
-.ingredients {
-    border: solid black 1px;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 90%;
-}
-
-.ingredient {
-    text-align: left;
-    display: flex;
-    border: solid black 1px;
-    text-align: left;
-    padding: 5px;
-    width: 90%;
-    margin: 5px;
-}
-
+.ingredientContainer,
 .instructionsContainer {
-    border: solid black 1px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
     margin-bottom: 50px;
+    width: 100%;
 }
 
+.ingredients,
 .instructions {
-    border: solid black 1px;
     margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(193, 193, 193);
+    border: solid 1px black;
 }
 
+.ingredient,
 .instruction {
     text-align: left;
     display: flex;
-    border: solid black 1px;
     text-align: left;
     padding: 5px;
     width: 90%;
     margin: 5px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 5px;
 }
 
 .detailsContainer {
@@ -94,8 +74,13 @@
     margin-right: 5px;
 }
 
+.detailsReview {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
 .categories {
-    border: solid black 1px;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -106,6 +91,8 @@
 .categories button {
     border: none;
     background-color: hsl(0, 0%, 70%);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .categories button:hover {
@@ -117,7 +104,6 @@
 }
 
 .categories li {
-    border: solid black 1px;
     margin: 2.5px;
     padding: 2.5px;
 }
@@ -127,5 +113,16 @@
     flex-flow: wrap;
     width: 90%;
     justify-content: space-around;
+    border-radius: 5px;
+}
+
+.editBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
     border: solid black 1px;
+    border-radius: 5px;
+    width: 200px;
+    border: none;
+    box-shadow: 1px 1px 1px 1px black;
 }
