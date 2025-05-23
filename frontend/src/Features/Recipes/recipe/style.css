@@ -17,6 +17,11 @@
     padding-inline-start: 0;
 }
 
+.goback-buttons {
+    display: flex; 
+    flex-direction: row;
+}
+
 .ingredientContainer {
     border: solid black 1px;
     display: flex;
