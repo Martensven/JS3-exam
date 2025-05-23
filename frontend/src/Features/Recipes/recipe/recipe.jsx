@@ -68,9 +68,6 @@ export const Recipes = () => {
                         <p className='numberOfPortions'>🍽️{recipe.portions}</p>
                         <AverageRatingTwo recipeId={recipe._id} />
                     </div>
-                    <div className="average-rating-container">
-                        <AverageRatingTwo recipeId={id} />
-                    </div>
                 </div>
 
 
