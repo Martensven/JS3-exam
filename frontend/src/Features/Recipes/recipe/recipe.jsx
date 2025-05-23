@@ -48,7 +48,7 @@ export const Recipes = () => {
             <main className="recipeMain">
                 <div className='goback-buttons'>
                     {recipe.categories.map((category) => (
-                        <button onClick={() => {
+                        <button className='goback-button' onClick={() => {
                             navigate(`/JS3-exam/categories/collection/${category.title}`);
                         }}>Gå tillbaka till {category.title}</button>
                     ))}
