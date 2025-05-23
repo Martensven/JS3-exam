@@ -16,6 +16,9 @@
 .card-img {
     width: 130px;
     height: 150px;
+    border: 3px #66D9D3 solid;
+    border-radius: 5px;
+    margin: 5%;
 }
 .card-txtbox {
     margin: 0 20px;
@@ -31,6 +34,7 @@
 .card-right {
     display: flex;
     justify-content: right;
+    padding-top: 50px;
 }
 .card-rating {
     font-size: 18px;

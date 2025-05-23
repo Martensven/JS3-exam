@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { client } from '../../../sanityClient';
 import { useParams } from 'react-router';
 import { Link } from 'react-router';
+import AverageRatingTwo from "../../Reviews/AverageRatingTwo/AverageRatingTwo";
+import ReviewList from '../../Reviews/ReviewList/ReviewList';
+import ReviewForm from '../../Reviews/ReviewForm/ReviewForm';
 
 export const Recipes = () => {
     const { id } = useParams(); // <-- Hämta receptets ID från URL
@@ -63,8 +66,8 @@ export const Recipes = () => {
                         <p className='timeToCook'>⏲️{recipe.timeToCook} min</p>
                         <p className="numberOfIngredients">🍌{recipe.ingredients.length}</p>
                         <p className='numberOfPortions'>🍽️{recipe.portions}</p>
+                        <AverageRatingTwo recipeId={recipe._id} />
                     </div>
-                    <p className='recipeRating'>⭐⭐⭐⭐⭐</p>
                 </div>
 
 
@@ -92,6 +95,9 @@ export const Recipes = () => {
                     </div>
                 </section>
                 <Link to={`/JS3-exam/recipes/edit/${recipe._id}`}><button>Redigera</button></Link>
+
+                <ReviewForm recipeId={recipe._id} />
+                <ReviewList recipeId={recipe._id} />
             </main >
         </>
     )

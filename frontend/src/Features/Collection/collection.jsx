@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { client } from "../../sanityClient";
 import { Link } from "react-router-dom";
 import './collection.css';
+import AverageRatingTwo from "../Reviews/AverageRatingTwo/AverageRatingTwo";
 
 export const Collection = () => {
     const { categoryTitle } = useParams();
@@ -41,7 +42,7 @@ export const Collection = () => {
                                 <h2 className="card-desc">{recipe.description}</h2>
                                 <h2 className="card-timer">Tillagningstid: {recipe.timeToCook} min</h2>
                                 <div className="card-right">
-                                    <h2 className="card-rating">⭐⭐⭐⭐⭐</h2>
+                                    <AverageRatingTwo recipeId={recipe._id} />
                                 </div>
                             </div>
                         </div>
