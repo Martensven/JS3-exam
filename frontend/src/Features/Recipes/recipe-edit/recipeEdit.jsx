@@ -172,15 +172,16 @@ export const RecipesEdit = () => {
             <h1>Redigera recept</h1>
 
             <label>Titel</label>
-            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <input className={'changeTitle'} type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
 
             <label>Beskrivning</label>
-            <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+            <textarea className={'changeDesc'} value={description} onChange={(e) => setDescription(e.target.value)} />
 
             <label>Bild</label>
             <img src={imageUrl} alt="Receptbild" className="recipeImg" />
             <input
                 type="file"
+                className={'changeImage'}
                 onChange={(e) => {
                     const file = e.target.files[0];
                     setNewImageFile(file);
@@ -200,6 +201,7 @@ export const RecipesEdit = () => {
                     <li key={category._id}>
                         <label>
                             <input
+                                id={category.title}
                                 type="checkbox"
                                 checked={selectedCategoryTitles.includes(category.title)}
                                 onChange={() => handleCategoryToggle(category.title)}
@@ -212,10 +214,20 @@ export const RecipesEdit = () => {
 
             <div className='detailsContainer'>
                 <label>Tid (min)</label>
-                <input type="number" value={timeToCook} onChange={(e) => setTimeToCook(parseInt(e.target.value))} />
+                <input
+                    id={'changeTTC'}
+                    type="number"
+                    value={timeToCook}
+                    onChange={(e) => setTimeToCook(parseInt(e.target.value))}
+                />
 
                 <label>Portioner</label>
-                <input type="number" value={portions} onChange={(e) => setPortions(parseInt(e.target.value))} />
+                <input
+                    id={'changePortions'}
+                    type="number"
+                    value={portions}
+                    onChange={(e) => setPortions(parseInt(e.target.value))}
+                />
             </div>
 
             <section className='listContainer'>
@@ -225,6 +237,7 @@ export const RecipesEdit = () => {
                         {ingredients.map((ingredient, index) => (
                             <li key={index}>
                                 <input
+                                    id={'ingredient-' + index}
                                     type="text"
                                     value={ingredient}
                                     onChange={(e) => {
@@ -233,18 +246,19 @@ export const RecipesEdit = () => {
                                         setIngredients(updated);
                                     }}
                                 />
-                                <button onClick={() => handleRemoveIngredient(index)}>❌</button>
+                                <button id={'removeIngredient-' + index} onClick={() => handleRemoveIngredient(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
 
                     <input
+                        id={'newIngredient'}
                         type="text"
                         placeholder="Ny ingrediens"
                         value={newIngredient}
                         onChange={(e) => setNewIngredient(e.target.value)}
                     />
-                    <button onClick={handleAddIngredient}>➕ Lägg till</button>
+                    <button id={'newIngredientBtn'} onClick={handleAddIngredient}>➕ Lägg till</button>
                 </div>
 
 
@@ -254,6 +268,7 @@ export const RecipesEdit = () => {
                         {instructions.map((instruction, index) => (
                             <li key={index}>
                                 <input
+                                    id={'instruction-' + index}
                                     type="text"
                                     value={instruction}
                                     onChange={(e) => {
@@ -262,18 +277,19 @@ export const RecipesEdit = () => {
                                         setInstructions(updated);
                                     }}
                                 />
-                                <button onClick={() => handleRemoveInstruction(index)}>❌</button>
+                                <button id={'removeInstructionBtn-' + index} onClick={() => handleRemoveInstruction(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
 
                     <input
+                        id='newInstruction'
                         type="text"
                         placeholder="Ny instruktion"
                         value={newInstruction}
                         onChange={(e) => setNewInstruction(e.target.value)}
                     />
-                    <button onClick={handleAddInstruction}>➕ Lägg till</button>
+                    <button id='newInstructionBtn' onClick={handleAddInstruction}>➕ Lägg till</button>
                 </div>
             </section>
 
