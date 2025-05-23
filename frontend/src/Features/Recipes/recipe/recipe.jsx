@@ -2,7 +2,7 @@ import './style.css';
 import { useState, useEffect } from "react";
 import { client } from '../../../sanityClient';
 import { useParams } from 'react-router';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import ReviewForm from '../../Reviews/ReviewForm/ReviewForm';
 import ReviewList from '../../Reviews/ReviewList/ReviewList';
 import AverageRatingTwo from '../../Reviews/AverageRatingTwo/AverageRatingTwo'
@@ -10,6 +10,7 @@ import AverageRatingTwo from '../../Reviews/AverageRatingTwo/AverageRatingTwo'
 export const Recipes = () => {
     const { id } = useParams(); // <-- Hämta receptets ID från URL
     const [recipe, setRecipe] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!id) return;
@@ -45,6 +46,14 @@ export const Recipes = () => {
     return (
         <>
             <main className="recipeMain">
+                <div className='goback-buttons'>
+                    {recipe.categories.map((category) => (
+                        <button onClick={() => {
+                            navigate(`/JS3-exam/categories/collection/${category.title}`);
+                        }}>Gå tillbaka till {category.title}</button>
+                    ))}
+                </div>
+                
 
                 <h1 className="recipeName">{recipe.title}</h1>
 
