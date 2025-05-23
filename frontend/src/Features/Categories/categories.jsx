@@ -52,9 +52,11 @@ export const Categories = () => {
   return (
 
     <main className="categoriesContainer">
-      <Link className="grid-item"><button>Skapa nytt recept</button></Link>
-
+      <section className="categoriesButton">
+      <Link to='/JS3-exam/recipes/create'><button>Skapa recept</button></Link>
+      </section>
       <section className="grid-container">
+        
         {categories.map(
           (
             category,
