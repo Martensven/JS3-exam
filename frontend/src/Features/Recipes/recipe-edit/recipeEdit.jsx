@@ -271,7 +271,7 @@ export const RecipesEdit = () => {
                         type="text"
                         placeholder="Ny instruktion"
                         value={newInstruction}
-                        onChange={(e) => setNewinstruction(e.target.value)}
+                        onChange={(e) => setNewInstruction(e.target.value)}
                     />
                     <button onClick={handleAddInstruction}>➕ Lägg till</button>
                 </div>
