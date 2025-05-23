@@ -127,4 +127,5 @@
     flex-flow: wrap;
     width: 90%;
     justify-content: space-around;
+    border: solid black 1px;
 }

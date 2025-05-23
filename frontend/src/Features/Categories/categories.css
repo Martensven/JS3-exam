@@ -1,0 +1,62 @@
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  
+}
+
+.categories-container a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.categoriesButton {
+  display: flex;
+  justify-content: center;
+ 
+
+}
+
+.categoriesButton button {
+  margin: 10px;
+  width: 140px;
+  height: 40px; 
+  font-size: large;
+  outline: none;
+  border: 2px solid rgba(102, 217, 211, 1);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
+}
+
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  
+}
+
+
+.grid-item {
+  font-family: 'inter', sans-serif;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 0 0 5px black;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  height: 400px;
+  text-decoration: none;
+
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+}

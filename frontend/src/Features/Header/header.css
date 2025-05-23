@@ -1,10 +1,11 @@
-@media (max-width: 412px) {
+@media (max-width: 450px) {
     .headerNav {
     font-family: Inter;
     text-align: center;
     margin: 0;
-    height: 10vh;
+    height: 6vh;
     width: 100%;
+    
 }
 
 .headerNav button {
@@ -16,7 +17,6 @@
     border: 2px solid rgba(102, 217, 211, 1);
     border-radius: 3px;
     background-color: white;
-
     box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
 }
 
@@ -29,10 +29,11 @@
     color: black;
 }
 
+
 .headerContainer {
     width: 100%;
-    height: 15vh;
-    background: linear-gradient(90deg, rgba(43, 128, 143, 1), rgba(23, 73, 82, 1) );
+    height: 20vh;
+    background: linear-gradient(90deg, rgba(43, 128, 143, 1), rgb(23, 73, 82) );
     color: rgb(255, 255, 226);
     display: flex;
     flex-direction: row;
