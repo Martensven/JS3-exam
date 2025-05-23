@@ -22,6 +22,16 @@
     flex-direction: row;
 }
 
+.goback-button {
+    cursor: pointer;
+    border: 2px solid rgba(102, 217, 211, 1);
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
+    margin: 10px;
+    padding: 5px;
+}
+
 .ingredientContainer,
 .instructionsContainer {
     display: flex;
