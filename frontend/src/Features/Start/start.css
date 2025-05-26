@@ -1,0 +1,81 @@
+@media (max-width: 450px) {
+.startSideContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-family: Inter;
+    scroll-behavior: smooth;
+}
+
+.starterH1 {
+    margin: 5vh 0px 2px 0px;
+}
+
+.starterP {
+    width: 75%;
+    font-size: large;
+}
+
+.Start{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.FoodImg {
+    width: 300px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px rgb(26, 26, 49);
+    margin-top: 1vh;
+}
+
+.P1 {
+    text-align: right;
+    font-size: medium;
+    margin: 1px 0px 0px 0px;
+    padding-right: 3px;
+}
+
+.P2 {
+    text-align: right;
+    padding-right: 30px;
+    margin: 0;
+}
+
+.TopTenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 10vh;
+
+    margin: 20px 0px 20px 0px;
+
+    border: 2px solid rgba(102, 217, 211, 0.595);
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px rgb(30, 72, 100);
+}
+
+.TopTenContainer p {
+    margin:0px 0px 2px 0px;
+    
+}
+
+.TopTenContainer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 3.5vh;
+    font-size: medium;
+    background-color: rgb(23, 73, 82);
+    color: white;
+    border-radius: 3px;
+    border: none;
+    margin-top: 3px;
+}
+}
