@@ -1,0 +1,55 @@
+.categoriesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.categories-container a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.categoriesButton {
+  display: flex;
+  justify-content: center;
+}
+
+.categoriesButton button {
+  margin: 10px;
+  width: 140px;
+  height: 40px; 
+  font-size: large;
+  outline: none;
+  border: 2px solid rgba(102, 217, 211, 1);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 0.5px 6px rgb(30, 72, 100);
+}
+
+.categoryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.categoryCard{
+  font-family: 'inter', sans-serif;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  width: 80%;
+  height: 200px;
+  text-decoration: none;
+  box-shadow: 1px 1px 5px rgb(26, 26, 49);
+}
