@@ -1,20 +1,9 @@
-/* .average-rating-container * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.average-rating-container {
-  width: 100px;
-  height: 100px;
-  font-weight: bold;
-  font-size: 1rem;
-  color: black;
-} */
-
 .star-shape {
   width: 100%;
   height: 100%;
-  background-color: yellow;
+  background-color: #2B808F;
+  font-family: Inter;
+  color: white;
   clip-path: polygon(
     50% 0%, 61% 35%, 98% 35%,
     68% 57%, 79% 91%, 50% 70%,
