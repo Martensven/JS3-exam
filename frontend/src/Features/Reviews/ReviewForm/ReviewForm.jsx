@@ -2,7 +2,7 @@ import "./reviewForm.css";
 import { useEffect, useState } from "react";
 import { client } from "../../../sanityClient";
 
-const ReviewForm = ({ recipeId }) => {
+const ReviewForm = ({ recipeId }) => { 
   const [showForm, setShowForm] = useState(false);
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
