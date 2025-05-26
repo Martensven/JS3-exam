@@ -38,9 +38,23 @@ export const useSortedRecipes = (categoryTitle, sortOrder) => {
   }, [categoryTitle]);
 
   const sorted = [...recipes].sort((a, b) => {
-    const ratingA = typeof a.rating === "number" ? a.rating : -1;
-    const ratingB = typeof b.rating === "number" ? b.rating : -1;
-    return sortOrder === "highest" ? ratingB - ratingA : ratingA - ratingB;
+    if (sortOrder === "timeCookingLong") {
+      const timeA = typeof a.timeToCook === "number" ? a.timeToCook : -1;
+      const timeB = typeof b.timeToCook === "number" ? b.timeToCook : -1;
+      return timeB -timeA;
+    } else if (sortOrder === "timeCookingShort") {
+      const timeA = typeof a.timeToCook === "number" ? a.timeToCook : -1;
+      const timeB = typeof b.timeToCook === "number" ? b.timeToCook : -1;
+      return timeA - timeB;
+    } else if (sortOrder === "alfaAToZ") {
+      return a.title.localeCompare(b.title);
+    } else if (sortOrder === "alfaZToA") {
+      return b.title.localeCompare(a.title);
+    } else {
+      const ratingA = typeof a.rating === "number" ? a.rating : -1;
+      const ratingB = typeof b.rating === "number" ? b.rating : -1;
+      return sortOrder === "highest" ? ratingB - ratingA : ratingA - ratingB;
+    }
   });
 
   return sorted;
