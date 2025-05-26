@@ -1,0 +1,12 @@
+.average-rating-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.average-rating-container {
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: rgb(236, 114, 0);
+}
