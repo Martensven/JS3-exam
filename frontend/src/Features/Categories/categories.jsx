@@ -41,12 +41,12 @@ export const Categories = () => {
 
   // Mappa kategorierna till bilder
   const imageMap = {
-    Frukost: "/JS3-exam/images/frukost.jpg",
-    Lunch: "/JS3-exam/images/lunch.jpeg",
-    Förrätt: "/JS3-exam/images/forratt.jpg",
-    Varmrätt: "/JS3-exam/images/varmratt.jpg",
-    Efterrätt: "/JS3-exam/images/efterratt.jpg",
-    Dryck: "/JS3-exam/images/dryck.jpg",
+    Frukost: "/JS3-exam/images/frukost2.jpg",
+    Lunch: "/JS3-exam/images/lunch2.jpg",
+    Förrätt: "/JS3-exam/images/forratt2.jpg",
+    Varmrätt: "/JS3-exam/images/varmratt2.jpg",
+    Efterrätt: "/JS3-exam/images/efterratt2.jpg",
+    Dryck: "/JS3-exam/images/dryck2.jpg",
   };
 
   return (
