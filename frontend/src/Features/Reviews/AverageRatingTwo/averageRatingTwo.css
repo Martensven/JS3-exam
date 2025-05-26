@@ -1,16 +1,14 @@
 .average-stars-wrapper {
   position: relative;
   display: inline-block;
-  font-size: 1.5rem; /* Justera storlek här */
+  font-size: 1.5rem;
   line-height: 1;
 }
-
 .star-background {
-  color: #ccc; /* Grå stjärnor (bakgrund) */
+  color: #ccc;
 }
-
 .star-foreground {
-  color: #FFD700; /* Gula stjärnor (fylld del) */
+  color: #ffd700;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,11 +19,11 @@
 .average-stars-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* mellanrum mellan stjärnor och siffran */
+  gap: 0.5rem;
 }
-
 .average-rating-number {
   font-size: 1rem;
+  font-family: Inter;
   font-weight: bold;
   color: #333;
 }

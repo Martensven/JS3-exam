@@ -2,7 +2,7 @@ import "./reviewForm.css";
 import { useEffect, useState } from "react";
 import { client } from "../../../sanityClient";
 
-const ReviewForm = ({ recipeId }) => { 
+const ReviewForm = ({ recipeId }) => {
   const [showForm, setShowForm] = useState(false);
   const [rating, setRating] = useState(null);
   const [comment, setComment] = useState("");
@@ -35,7 +35,7 @@ const ReviewForm = ({ recipeId }) => {
       },
     };
 
-    // Lägg till "comment" endast om den inte är tom
+    // Lägg bara till kommentar om den inte är tom
     const trimmedComment = comment.trim();
     if (trimmedComment) {
       reviewDoc.comment = trimmedComment;
@@ -48,10 +48,9 @@ const ReviewForm = ({ recipeId }) => {
       setComment("");
       setReviewer("");
       setError(null);
-      // Vänta 2 sekunder innan du stänger popupen
       setTimeout(() => {
         setShowForm(false);
-        setSuccess(false); // återställ efter visning
+        setSuccess(false);
       }, 2000);
     } catch (err) {
       console.error("Kunde inte skicka recension:", err);
@@ -65,6 +64,7 @@ const ReviewForm = ({ recipeId }) => {
         <button
           onClick={() => setShowForm(true)}
           className="open-review-form-btn"
+          id="cyp-review-open-form-button"
         >
           Lämna recension
         </button>
@@ -82,7 +82,7 @@ const ReviewForm = ({ recipeId }) => {
             )}
             {error && <p className="review-error-message">{error}</p>}
 
-            <h3 className="review-title">Gillade du receptet?</h3>
+            <h3 className="review-form-title">Gillade du receptet?</h3>
             <p className="review-subtitle">
               Lämna en recension genom att klicka på stjärnorna, fyll i ett namn
               och lämna en kommentar (frivilligt)!
@@ -96,6 +96,7 @@ const ReviewForm = ({ recipeId }) => {
                   onClick={() => setRating(val)}
                   aria-label={`Sätt betyg: ${val} av 5`}
                   className={`star-button ${val <= rating ? "selected" : ""}`}
+                  id={`cyp-review-star-${val}`}
                 >
                   ★
                 </button>
@@ -109,6 +110,7 @@ const ReviewForm = ({ recipeId }) => {
               placeholder="Ange namn..."
               required
               className="review-input"
+              id="cyp-review-input"
             />
 
             <textarea
@@ -116,18 +118,24 @@ const ReviewForm = ({ recipeId }) => {
               onChange={(e) => setComment(e.target.value)}
               placeholder="Lämna en kommentar (frivilligt)..."
               className="review-textarea"
+              id="cyp-review-textarea"
             />
 
             {error && <p className="error-message">{error}</p>}
 
             <div className="review-buttons">
-              <button type="submit" className="submit-btn">
+              <button
+                type="submit"
+                className="submit-btn"
+                id="cyp-review-submit-button"
+              >
                 Skicka
               </button>
               <button
                 type="button"
                 onClick={() => setShowForm(false)}
                 className="cancel-btn"
+                id="cyp-review-cancel-button"
               >
                 Avbryt
               </button>
