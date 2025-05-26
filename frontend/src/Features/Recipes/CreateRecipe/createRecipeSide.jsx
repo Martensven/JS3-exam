@@ -108,13 +108,13 @@ export const CreateRecipeSide = () => {
 
     return (
         <>
-        <main>
-            <section>
+        <main className="createRecipeContainer">
+            <section className="textContainer">
                 <h1>Här kan du skapa och lägga upp ett eget recept!</h1>
                 <p>Följ bara anvisningarna nedan.</p>
             </section>
 
-            <article>
+            <article className="Inputfields">
              <label>Titel</label>
             <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
 
@@ -123,7 +123,7 @@ export const CreateRecipeSide = () => {
 
             <label>Bild</label>
             {imageUrl && <img src={imageUrl} alt="Förhandsvisning" className="recipeImg" />}
-            <input
+            <input className="uploadImgContainer"
                 type="file"
                 onChange={(e) => {
                     const file = e.target.files[0];
@@ -177,7 +177,7 @@ export const CreateRecipeSide = () => {
                                         setIngredients(updated);
                                     }}
                                 />
-                                <button onClick={() => handleRemoveIngredient(index)}>❌</button>
+                                <button className="removeButton" onClick={() => handleRemoveIngredient(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
@@ -205,7 +205,7 @@ export const CreateRecipeSide = () => {
                                         setInstructions(updated);
                                     }}
                                 />
-                                <button onClick={() => handleRemoveInstruction(index)}>❌</button>
+                                <button className="removeButton" onClick={() => handleRemoveInstruction(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
