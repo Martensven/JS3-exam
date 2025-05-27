@@ -20,7 +20,7 @@ export const CreateRecipeSide = () => {
     const [newInstruction, setNewInstruction] = useState("");
 
     useEffect(() => {
-        client.fetch(`*[_type == 'category] {_id, title}`).then(setAllCategories);
+        client.fetch(`*[_type == 'category'] {_id, title}`).then(setAllCategories);
     },[]);
 
     const handleCategoryToggle = (title) => {
