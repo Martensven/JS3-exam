@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { client } from "../../../sanityClient"; 
-import AverageRatingTwo from "../../Reviews/AverageRatingTwo/AverageRatingTwo";
+import AverageRating from "../../Reviews/AverageRating/AverageRating";
 import "./topRatedRecipes.css";
 import { Link } from "react-router-dom";
 
@@ -53,22 +53,19 @@ const TopRatedRecipes = () => {
         <section key={recipe._id}>
           <Link className="link-cards" to={`/JS3-exam/recipes/${recipe._id}`}>
             <div className="card-container">
+              <div className="card-img-container">
               {recipe.image?.asset?.url && (
                 <img
-                  className="card-img"
-                  src={recipe.image.asset.url}
-                  alt={recipe.title}
+                className="card-img"
+                src={recipe.image.asset.url}
+                alt={recipe.title}
                 />
               )}
+              <div className="card-rating"><AverageRating recipeId={recipe._id}/></div>
+              </div>
               <div className="card-txtbox">
                 <h1 className="card-title">{recipe.title}</h1>
                 <h2 className="card-desc">{recipe.description}</h2>
-                <h2 className="card-timer">
-                  Genomsnittligt betyg: {recipe.avgRating}
-                </h2>
-                <div className="card-right">
-                  <AverageRatingTwo recipeId={recipe._id} />
-                </div>
               </div>
             </div>
           </Link>
