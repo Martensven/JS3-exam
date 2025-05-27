@@ -1,0 +1,46 @@
+.top-rated-recipes {
+    font-family: 'inter', sans-serif;
+}
+
+.top-rated-title {
+    text-align: center;
+    font-size: 35px;
+}
+.link-cards {
+    color: black;
+    text-decoration: none;
+}
+.card-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: #66D9D3 3px solid;
+    padding-bottom: 10px;
+    margin: 20px 5px;
+}
+.card-img {
+    width: 130px;
+    height: 150px;
+    border: 3px #66D9D3 solid;
+    border-radius: 5px;
+}
+.card-txtbox {
+    margin: 0 20px;
+    width: 100%;
+}
+.card-title {
+    font-size: 20px;
+}
+.card-desc, .card-etc {
+    font-weight: 200;
+    font-size: 15px;
+}
+.card-img-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2% 5px;
+}
+.card-rating {
+    width: 100px;
+    height: 100px;
+}

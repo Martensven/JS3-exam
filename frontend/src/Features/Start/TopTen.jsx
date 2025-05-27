@@ -1,11 +1,12 @@
 import { PiSneakerMoveDuotone } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 
 export const TopTen = () => {
   return (
     <article className="TopTenContainer">
         <p>Se våra Top10 rankade recept</p>
-        <button><PiSneakerMoveDuotone /></button>
+        <Link to='/JS3-Exam/top-rated/'><button><PiSneakerMoveDuotone /></button></Link>
     </article>
   
 );

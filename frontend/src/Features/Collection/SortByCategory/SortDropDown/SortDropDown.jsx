@@ -13,12 +13,12 @@ const SortDropdown = ({ sortOrder, setSortOrder }) => {
         <option value="placeholder" disabled>
           Sortera efter
         </option>
-        <option id="op1" value="alfaAToZ">Alfabetisk ordning (A - Ö)</option>
-        <option id="op2" value="alfaZToA">Alfabetisk ordning (Ö - A)</option>
-        <option id="op3" value="highest">Högst betyg</option>
-        <option id="op4" value="lowest">Lägst betyg</option>
-        <option id="op5" value="timeCookingLong">Längst tillagningstid</option>
-        <option id="op6" value="timeCookingShort">Kortast tillagningstid</option>
+        <option value="alfaAToZ">Alfabetisk ordning (A - Ö)</option>
+        <option value="alfaZToA">Alfabetisk ordning (Ö - A)</option>
+        <option value="highest">Högst betyg</option>
+        <option value="lowest">Lägst betyg</option>
+        <option value="timeCookingLong">Längst tillagningstid</option>
+        <option value="timeCookingShort">Kortast tillagningstid</option>
       </select>
     </div>
   );
