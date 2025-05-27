@@ -9,6 +9,7 @@ import { Collection } from './Features/Collection/collection.jsx';
 import { Categories } from './Features/Categories/categories.jsx';
 import ReviewList from './Features/Reviews/ReviewList/ReviewList.jsx';
 import { CreateRecipeSide } from './Features/Recipes/CreateRecipe/createRecipeSide.jsx'
+import TopRatedRecipes from './Features/Recipes/TopRated/topRatedRecipes.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/JS3-exam/categories' element={<Categories />}></Route>
         <Route path='/JS3-exam/recipes/create' element={<CreateRecipeSide />}></Route>
         <Route path='/JS3-exam/recipes/:id' element={<ReviewList />}></Route>
+        <Route path='/JS3-exam/top-rated' element={<TopRatedRecipes />}></Route>
       </Routes>
 
       <Footer></Footer>

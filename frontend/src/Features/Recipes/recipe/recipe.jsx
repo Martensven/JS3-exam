@@ -8,7 +8,7 @@ import ReviewList from '../../Reviews/ReviewList/ReviewList';
 import AverageRatingTwo from '../../Reviews/AverageRatingTwo/AverageRatingTwo'
 
 export const Recipes = () => {
-    const { id } = useParams(); // <-- Hämta receptets ID från URL
+    const { id } = useParams(); // <-- Hämta receptets ID från URL 
     const [recipe, setRecipe] = useState(null);
     const navigate = useNavigate();
 
