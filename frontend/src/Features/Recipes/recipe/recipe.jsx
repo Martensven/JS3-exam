@@ -53,7 +53,7 @@ export const Recipes = () => {
                         }}>Gå tillbaka till {category.title}</button>
                     ))}
                 </div>
-                
+
 
                 <h1 className="recipeName">{recipe.title}</h1>
 
@@ -64,7 +64,7 @@ export const Recipes = () => {
                 <ul className="categories">
                     {recipe.categories.map((category, index) => (
                         <li key={index} className="category">
-                            <Link to={`/JS3-exam/categories/collection/${category.title}`}> <button id={`${category.title}Btn`}>{category.title}</button></Link>
+                            <Link to={`/JS3-exam/categories/collection/${category.title}`}> <button className='categoryBtn' id={`${category.title}Btn`}>{category.title}</button></Link>
                         </li>
                     ))}
                 </ul>
@@ -77,9 +77,6 @@ export const Recipes = () => {
                         <p className='timeToCook'>⏲️{recipe.timeToCook} min</p>
                         <p className="numberOfIngredients">🍌{recipe.ingredients.length}</p>
                         <p className='numberOfPortions'>🍽️{recipe.portions}</p>
-                    </div>
-
-                    <div className='detailsReview'>
                         <AverageRatingTwo recipeId={recipe._id} />
                     </div>
 
@@ -87,6 +84,7 @@ export const Recipes = () => {
 
 
                 <section className='listContainer'>
+                    <h2>Ingredienser</h2>
                     <div className="ingredientContainer">
                         <ul className="ingredients">
                             {recipe.ingredients.map((ingredient, index) => (
@@ -100,6 +98,7 @@ export const Recipes = () => {
 
 
                     <div className="instructionsContainer">
+                        <h2>Instruktioner</h2>
                         <ul className="instructions">
                             {recipe.instructions.map((instruction, index) => (
                                 <li key={index} className="instruction">
@@ -110,7 +109,7 @@ export const Recipes = () => {
                     </div>
                 </section>
 
-                <Link to={`/JS3-exam/recipes/edit/${recipe._id}`}><button className='editBtn'>Redigera</button></Link>
+                <Link className='editLink' to={`/JS3-exam/recipes/edit/${recipe._id}`}><button className='editBtn'>Redigera</button></Link>
                 <ReviewForm recipeId={id} />
                 <ReviewList recipeId={id} />
             </main >

@@ -18,7 +18,7 @@
 }
 
 .goback-buttons {
-    display: flex; 
+    display: flex;
     flex-direction: row;
 }
 
@@ -32,13 +32,26 @@
     padding: 5px;
 }
 
+.recipeDesc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: hsl(0, 0%, 90%);
+    border-radius: 5px;
+    min-height: 50px;
+    box-shadow: 1px 1px 3px -1px black;
+}
+
 .ingredientContainer,
 .instructionsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -51,8 +64,6 @@
     flex-direction: column;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px rgb(193, 193, 193);
-    border: solid 1px black;
 }
 
 .ingredient,
@@ -61,15 +72,20 @@
     display: flex;
     text-align: left;
     padding: 5px;
-    width: 90%;
+    width: 100%;
     margin: 5px;
     background-color: rgb(234, 234, 234);
     border-radius: 5px;
+    box-shadow: 1px 1px 3px -1px black;
 }
 
 .detailsContainer {
     background-color: hsl(0, 0%, 90%);
     margin-bottom: 20px;
+    border-radius: 5px;
+    width: 90%;
+    height: 50px;
+    box-shadow: 1px 1px 3px -1px black;
 }
 
 .details {
@@ -100,9 +116,10 @@
 
 .categories button {
     border: none;
-    background-color: hsl(0, 0%, 70%);
+    background-color: hsl(0, 0%, 90%);
     border-radius: 5px;
     padding: 5px;
+    box-shadow: 1px 1px 3px -1px black;
 }
 
 .categories button:hover {
@@ -126,13 +143,20 @@
     border-radius: 5px;
 }
 
+.editLink {
+    width: 92.5%;
+}
+
 .editBtn {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     border: solid black 1px;
     border-radius: 5px;
-    width: 200px;
+    width: 100%;
     border: none;
-    box-shadow: 1px 1px 1px 1px black;
+    box-shadow: 1px 1px 3px -1px black;
+    margin: 0;
+    margin-bottom: 30px;
+    background-color: rgb(255, 166, 196);
 }
