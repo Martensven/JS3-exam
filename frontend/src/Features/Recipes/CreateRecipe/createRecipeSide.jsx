@@ -9,8 +9,8 @@ export const CreateRecipeSide = () => {
   const [allCategories, setAllCategories] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [timeToCook, setTimeToCook] = useState(0);
-  const [portions, setPortions] = useState(0);
+  const [timeToCook, setTimeToCook] = useState("");
+  const [portions, setPortions] = useState("");
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const [selectedCategoryTitles, setSelectedCategoryTitles] = useState([]);
@@ -85,12 +85,12 @@ export const CreateRecipeSide = () => {
 
   const handleSave = async () => {
     const imageObj = await handleImageUpload();
-    
+
     if (!imageObj) {
       alert("Kunde inte spara recept utan bild.");
       return;
     }
-    
+
     try {
       const newRecipe = {
         _type: "recipe",
@@ -176,14 +176,21 @@ export const CreateRecipeSide = () => {
             <input
               type="number"
               value={timeToCook}
-              onChange={(e) => setTimeToCook(parseInt(e.target.value))}
+              onChange={(e) => {
+                const val = e.target.value;
+                setTimeToCook(val === "" ? "" : parseInt(val))
+              }}
             />
 
             <label>Portioner</label>
+
             <input
               type="number"
               value={portions}
-              onChange={(e) => setPortions(parseInt(e.target.value))}
+              onChange={(e) => {
+                const val = e.target.value;
+                setPortions(val === "" ? "" : parseInt(val));
+              }}
             />
           </div>
 
