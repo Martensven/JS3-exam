@@ -1,7 +1,7 @@
 import './header.css'
 import { LOGO } from './LOGO'
 import { NavButtons } from './NavButtons'
-import "../../assets/Kockmössan.jpg"
+import KockmössanImg from "../../assets/Kockmössan.jpg"
 
 export const Header = () => {
 
@@ -9,7 +9,7 @@ export const Header = () => {
         <>
             <div className='headerContainer'>
                 <LOGO />
-                <img src='src\assets\Kockmössan.jpg' alt='Kockmössan' className='kockmössan' />
+                <img src={KockmössanImg} alt='Kockmössan' className='kockmössan' />
             </div>
 
             <nav className="headerNav">

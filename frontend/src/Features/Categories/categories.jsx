@@ -60,18 +60,18 @@ export const Categories = () => {
         {categories.map( // Mappa över kategorierna och skapa en länk för varje kategori
           (
             category,
-            index 
+            index
           ) => (
             <Link
               to={`/JS3-exam/categories/collection/${encodeURIComponent(
                 category.title
               )}`} // Länk till kategorisidan, skickar med kategorins titel i URL:en
-              key={index} 
-              className="categoryCard" 
-              style={{ 
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url(${
-                  imageMap[category.title] || "/images/default.jpg" // Använd en standardbild om ingen bild finns
-                })`,
+              key={index}
+              id={'card' + category.title}
+              className="categoryCard"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url(${imageMap[category.title] || "/images/default.jpg" // Använd en standardbild om ingen bild finns
+                  })`,
               }}
               data-aos="fade-up" // AOS animation
               // data-aos-delay={index > 4 * 600}

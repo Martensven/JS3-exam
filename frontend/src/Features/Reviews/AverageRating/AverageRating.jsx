@@ -1,4 +1,4 @@
-import './averageRating.css'
+import "./averageRating.css";
 import { useEffect, useState } from "react";
 import { client } from "../../../sanityClient";
 
@@ -25,7 +25,7 @@ const AverageRating = ({ recipeId }) => {
 
         const total = data.reduce((sum, review) => sum + review.rating, 0);
         const avg = total / data.length;
-        setAverage(avg.toFixed(1)); // avrunda till en decimal
+        setAverage(avg.toFixed(1));
       } catch (err) {
         console.error("Kunde inte hämta betyg:", err);
         setError("Fel vid hämtning av betyg");
@@ -39,9 +39,9 @@ const AverageRating = ({ recipeId }) => {
   if (average === null) return <p>--</p>;
 
   return (
-      <div className="star-shape">
-        <p>{average}</p>
-      </div>
+    <div className="star-shape">
+      <p>{average}</p>
+    </div>
   );
 };
 
