@@ -10,8 +10,8 @@ export const RecipesEdit = () => {
     const [allCategories, setAllCategories] = useState([]);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [timeToCook, setTimeToCook] = useState(0);
-    const [portions, setPortions] = useState(0);
+    const [timeToCook, setTimeToCook] = useState("");
+    const [portions, setPortions] = useState("");
     const [ingredients, setIngredients] = useState([]);
     const [instructions, setInstructions] = useState([]);
     const [selectedCategoryTitles, setSelectedCategoryTitles] = useState([]);
@@ -218,7 +218,10 @@ export const RecipesEdit = () => {
                     id={'changeTTC'}
                     type="number"
                     value={timeToCook}
-                    onChange={(e) => setTimeToCook(parseInt(e.target.value))}
+                    onChange={(e) => {
+                        const val = e.target.value;
+                        setTimeToCook(val === "" ? "" : parseInt(val));
+                    }}
                 />
 
                 <label>Portioner</label>
@@ -226,7 +229,10 @@ export const RecipesEdit = () => {
                     id={'changePortions'}
                     type="number"
                     value={portions}
-                    onChange={(e) => setPortions(parseInt(e.target.value))}
+                    onChange={(e) => {
+                        const val = e.target.value;
+                        setPortions(val === "" ? "" : parseInt(val));
+                    }}
                 />
             </div>
 
