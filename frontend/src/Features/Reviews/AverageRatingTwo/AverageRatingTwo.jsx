@@ -25,7 +25,7 @@ const AverageRatingTwo = ({ recipeId }) => {
 
         const total = data.reduce((sum, review) => sum + review.rating, 0);
         const avg = total / data.length;
-        setAverage(avg.toFixed(1)); // avrunda till en decimal
+        setAverage(avg.toFixed(1));
       } catch (err) {
         console.error("Kunde inte hämta betyg:", err);
         setError("Fel vid hämtning av betyg");

@@ -8,7 +8,7 @@ import { RecipesEdit } from './Features/Recipes/recipe-edit/recipeEdit.jsx';
 import { Collection } from './Features/Collection/collection.jsx';
 import { Categories } from './Features/Categories/categories.jsx';
 import ReviewList from './Features/Reviews/ReviewList/ReviewList.jsx';
-import { CreateRecipeSide } from './Features/Recipes/CreateRecipe/createRecipeSide.jsx'
+import { CreateRecipeSide } from './Features/Recipes/CreateRecipe/createRecipeSide.jsx';
 
 function App() {
   return (
