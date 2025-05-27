@@ -85,10 +85,12 @@ export const CreateRecipeSide = () => {
 
   const handleSave = async () => {
     const imageObj = await handleImageUpload();
+    
     if (!imageObj) {
       alert("Kunde inte spara recept utan bild.");
       return;
     }
+    
     try {
       const newRecipe = {
         _type: "recipe",
