@@ -87,6 +87,31 @@
   list-style-type: none;
 }
 
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+    margin-bottom: 8px;
+    padding: 0;
+}
+
+.categories label {
+    font-size: medium;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.categories li {
+    font-size: medium;
+    padding: 1px;
+    margin: 0;
+    list-style-type: none;
+    
+}
+
 .listContainer {
   display: flex;
   justify-content: center;
