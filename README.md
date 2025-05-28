@@ -1,6 +1,7 @@
 # JS3-exam
-Grupp 5. 
+## Grupp 5. 
 
+# Instructions to run:
 1. cd BaaS-Sanity
 2. npm install
 3. cd ../frontend
