@@ -8,8 +8,48 @@ You can:
 - sort by rating, time to cook and alphabetical order
 - You can edit or create your own recipes aswell as leave a rating and/or comment
 ```
-
-
+# Dependencies
+Frontend:
+```
+@sanity/client
+aos
+react
+react-dom
+react-icons
+react-router
+react-router-dom
+```
+devDependencies:
+```
+@eslint/js
+@types/react
+@types/react-dom
+@vitejs/plugin-react
+cypress
+cypress-vite
+eslint
+eslint-plugin-react-hooks
+eslint-plugin-react-refresh
+globals
+vite
+```
+Backend (as a Service)
+```
+@sanity/vision
+react
+react-dom
+react-is
+sanity"
+styled-components
+url
+```
+devDependencies:
+```
+@sanity/eslint-config-studio
+@types/react
+eslint
+typescript
+```
 # Instructions to run:
 ```
 1. cd BaaS-Sanity
