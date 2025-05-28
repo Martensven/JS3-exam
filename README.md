@@ -1,5 +1,4 @@
-# JS3-exam
-Grupp 5. 
+# JS3-exam, Grupp 5. 
 
 ## Introduction
 This is a recipe app that we have created with Sanity as a headless CMS and React in the frontend. 
