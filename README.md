@@ -1,7 +1,27 @@
 # JS3-exam
 Grupp 5. 
 
+1. cd BaaS-Sanity
+2. npm install
+3. cd ../frontend
+4. npm install
 
+5. Open three bash-terminals:
+
+### To start the BaaS/Headless CMS
+1. cd BaaS-Sanity
+2. npm run dev (opens at http://localhost:3333/)
+
+### To view frontend:
+1. cd frontend (opens at http://localhost:5173/JS3-exam/)
+2. npm run dev
+
+### To run tests:
+1. cd frontend
+2. npx cypress open
+3. Select E2E Testing
+4. Select Chrome and "Start E2E testing in Chrome
+5. Select the test you want to run 
 
 ## Trello 
 https://trello.com/invite/b/681deffa2db3e66c1d3bb981/ATTIddde1c5fa7ccb21b6f2bcbc902a0f54a6121EF6D/js3-grupp-5-mat-och-ater-mat
