@@ -1,5 +1,5 @@
 # JS3-exam
-## Grupp 5. 
+Grupp 5. 
 
 ## Introduction
 This is a recipe app that we have created with Sanity as a headless CMS and React in the frontend. 
@@ -17,7 +17,6 @@ You can:
 2. npm install
 3. cd ../frontend
 4. npm install
-
 5. Open three bash-terminals:
 ```
 ### To start the BaaS/Headless CMS
@@ -27,8 +26,8 @@ You can:
 ```
 ### To view frontend:
 ```
-1. cd frontend (opens at http://localhost:5173/JS3-exam/)
-2. npm run dev
+1. cd frontend 
+2. npm run dev (opens at http://localhost:5173/JS3-exam/)
 ```
 ### To run tests:
 ```
