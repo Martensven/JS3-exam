@@ -2,7 +2,11 @@
 ## Grupp 5. 
 
 ## Introduction
-This is a recipe app that we have created with Sanity as a headless CMS and React in the frontend. / You can find all kinds of recipes through our top 10 rated or by category. / You can sort by rating, time to cook and alphabetical order. / You can edit or create your own recipes aswell as leave a rating and/or comment.
+This is a recipe app that we have created with Sanity as a headless CMS and React in the frontend. 
+You can:
+- find all kinds of recipes through our top 10 rated or by category
+- sort by rating, time to cook and alphabetical order
+- You can edit or create your own recipes aswell as leave a rating and/or comment
 
 # Instructions to run:
 1. cd BaaS-Sanity
