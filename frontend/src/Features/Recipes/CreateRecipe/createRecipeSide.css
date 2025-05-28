@@ -49,7 +49,7 @@
 }
 
 .detailsContainer {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,35 +88,35 @@
 }
 
 .categories {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 
-    margin-bottom: 8px;
-    padding: 0;
+  margin-bottom: 8px;
+  padding: 0;
 }
 
 .categories label {
-    font-size: medium;
-    padding: 0;
-    margin: 0;
-    
+  font-size: medium;
+  padding: 0;
+  margin: 0;
+
 }
 
 .categories li {
-    font-size: medium;
-    padding: 1px;
-    margin: 0;
-    list-style-type: none;
-    
+  font-size: medium;
+  padding: 1px;
+  margin: 0;
+  list-style-type: none;
+
 }
 
 .listContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 .ingredientContainer .removeButton {
@@ -147,6 +147,7 @@
   height: 3vh;
   font-size: medium;
 }
+
 .createRecipeContainer button {
   width: 32vw;
   height: 4vh;

@@ -1,5 +1,5 @@
-@media (max-width: 450px) {
-.startSideContainer{
+/* @media (max-width: 450px) { */
+.startSideContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +19,7 @@
     font-size: large;
 }
 
-.Start{
+.Start {
     display: flex;
     flex-direction: column;
 
@@ -61,8 +61,8 @@
 }
 
 .TopTenContainer p {
-    margin:0px 0px 2px 0px;
-    
+    margin: 0px 0px 2px 0px;
+
 }
 
 .TopTenContainer button {
@@ -78,4 +78,5 @@
     border: none;
     margin-top: 3px;
 }
-}
+
+/* } */
