@@ -1,6 +1,7 @@
 .collection-title {
     text-align: center;
     font-size: 35px;
+    font-family:  "Atma", system-ui;
 }
 .link-cards {
     color: black;
