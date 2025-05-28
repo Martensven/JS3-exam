@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: inter;
     margin: 10px;
 }
 
@@ -39,7 +40,7 @@
     flex-direction: column;
     margin-bottom: 20px;
     width: 90%;
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 95%);
     border-radius: 5px;
     min-height: 50px;
     box-shadow: 1px 1px 3px -1px black;
@@ -74,13 +75,13 @@
     padding: 5px;
     width: 100%;
     margin: 5px;
-    background-color: rgb(234, 234, 234);
+    background-color:hsl(0, 0%, 95%);
     border-radius: 5px;
     box-shadow: 1px 1px 3px -1px black;
 }
 
 .detailsContainer {
-    background-color: hsl(0, 0%, 90%);
+    background-color:hsl(0, 0%, 95%);
     margin-bottom: 20px;
     border-radius: 5px;
     width: 90%;

@@ -1,0 +1,94 @@
+.recipeMain {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter;
+  margin: 2px;
+}
+
+.recipeMain label {
+  font-weight: 600;
+  font-size: larger;
+  margin: 6px;
+  padding: 5px;
+}
+
+.recipeMain input {
+  height: 3vh;
+  width: 80%;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  font-size: medium;
+  margin: 1px;
+}
+
+.recipeMain textarea {
+  height: 5vh;
+  width: 80%;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.116);
+  font-family: inter;
+  font-size: medium;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+  margin-bottom: 8px;
+  padding: 0;
+}
+
+.ingredientContainer button {
+  width: 32vw;
+  height: 4vh;
+  margin: 8px;
+  padding: 0;
+  font-size: medium;
+  outline: none;
+  border: 1px solid rgba(102, 217, 211, 1);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 0.5px 3px rgb(30, 72, 100);
+}
+
+.ingredientContainer .removeIngredient {
+  width: 10vw;
+  height: 3vh;
+  margin: 3px 0px 1px 2px;
+  font-size: smaller;
+}
+
+.instructionsContainer button {
+  width: 32vw;
+  height: 4vh;
+  margin: 8px;
+  padding: 0;
+  font-size: medium;
+  outline: none;
+  border: 1px solid rgba(102, 217, 211, 1);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 0.5px 3px rgb(30, 72, 100);
+}
+
+.instructionsContainer .removeInstruction {
+  width: 10vw;
+  height: 3vh;
+  margin: 3px 0px 1px 2px;
+  font-size: smaller;
+}
+
+.saveBtn {
+  width: 50vw;
+  height: 4vh;
+  margin: 8px;
+  padding: 0;
+  font-size: medium;
+  outline: none;
+  border: 1px solid rgba(102, 217, 211, 1);
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 0.5px 3px rgb(30, 72, 100);
+}

@@ -1,4 +1,4 @@
-/* @media (max-width: 450px) { */
+
 .startSideContainer {
     display: flex;
     flex-direction: column;
@@ -79,4 +79,3 @@
     margin-top: 3px;
 }
 
-/* } */
