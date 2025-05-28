@@ -19,7 +19,7 @@ react-icons
 react-router
 react-router-dom
 ```
-devDependencies:
+Frontend devDependencies:
 ```
 @eslint/js
 @types/react
@@ -43,7 +43,7 @@ sanity"
 styled-components
 url
 ```
-devDependencies:
+Backend (as a Service) devDependencies:
 ```
 @sanity/eslint-config-studio
 @types/react
