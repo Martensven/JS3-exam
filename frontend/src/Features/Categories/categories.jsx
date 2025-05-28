@@ -53,7 +53,7 @@ export const Categories = () => {
     <main className="categoriesContainer">
       <section className="categoriesButton">
         <Link to="/JS3-exam/recipes/create">
-          <button>Skapa recept</button>
+          <button className="createRecipeBtn">Skapa recept</button>
         </Link>
       </section>
       <section className="categoryContainer">
