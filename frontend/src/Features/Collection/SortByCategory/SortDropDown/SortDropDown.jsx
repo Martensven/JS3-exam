@@ -10,7 +10,7 @@ const SortDropdown = ({ sortOrder, setSortOrder }) => {
         value={sortOrder} //Sätter värdet på select till det aktuella sortOrder
         onChange={(e) => setSortOrder(e.target.value)} //Anropar setSortOrder med det valda värdet
       >
-        <option value="placeholder" disabled>
+        <option value="placeholder" disabled> 
           Sortera efter
         </option>
         <option value="alfaAToZ">Alfabetisk ordning (A - Ö)</option>
