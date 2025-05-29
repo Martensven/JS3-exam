@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 export const CreateRecipeSide = () => {
   const navigate = useNavigate();
 
-  const [allCategories, setAllCategories] = useState([]); 
+  const [allCategories, setAllCategories] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [timeToCook, setTimeToCook] = useState("");
@@ -19,10 +19,13 @@ export const CreateRecipeSide = () => {
   const [newIngredient, setNewIngredient] = useState("");
   const [newInstruction, setNewInstruction] = useState("");
 
+  // this code is almost the same as the edit recipe code.
+  // Fetching the category data from sanity server using the QROC syntax.
   useEffect(() => {
     client.fetch(`*[_type == 'category'] {_id, title}`).then(setAllCategories);
   }, []);
 
+  // Handle category from server by getting data and put in new data while creating recipe.
   const handleCategoryToggle = (title) => {
     setSelectedCategoryTitles((prev) =>
       prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
@@ -41,7 +44,7 @@ export const CreateRecipeSide = () => {
         : null;
     })
     .filter(Boolean);
-
+  // function for the remove and also add feature of ingredient. Making it able to send new or delete inputs
   const handleRemoveIngredient = (index) => {
     setIngredients(ingredients.filter((_, i) => i !== index));
   };
@@ -52,7 +55,7 @@ export const CreateRecipeSide = () => {
       setNewIngredient("");
     }
   };
-
+  // Function for Instruction for a recipe. Same as the ingredient function
   const handleAddInstruction = () => {
     if (newInstruction.trim()) {
       setInstructions([...instructions, newInstruction]);
@@ -64,11 +67,12 @@ export const CreateRecipeSide = () => {
     setInstructions(instructions.filter((_, i) => i !== index));
   };
 
+  // Function for uploading a picture for the recipe
   const handleImageUpload = async () => {
-    if (!newImageFile) return null;
+    if (!newImageFile) return null; // If not a image then it will not show a image
 
     try {
-      const asset = await client.assets.upload("image", newImageFile);
+      const asset = await client.assets.upload("image", newImageFile); // If it is a successful upload it connects it to the recipe data
       return {
         _type: "image",
         asset: {
@@ -77,6 +81,7 @@ export const CreateRecipeSide = () => {
         },
       };
     } catch (err) {
+      //error message return if the uplaod don't work
       console.error("Bilduppladdning misslyckades", err);
       alert("Kunde inte ladda upp bilden.");
       return null;
@@ -87,11 +92,13 @@ export const CreateRecipeSide = () => {
     const imageObj = await handleImageUpload();
 
     if (!imageObj) {
+      // If user not add a mg to the recipe. An error will pop up as an alert
       alert("Kunde inte spara recept utan bild.");
       return;
     }
 
     try {
+      // Function will add all data into recipes on sanity server.
       const newRecipe = {
         _type: "recipe",
         title,
@@ -104,9 +111,9 @@ export const CreateRecipeSide = () => {
         categories: updatedCategories,
       };
 
-      const result = await client.create(newRecipe);
+      const result = await client.create(newRecipe); // saves and create the recipe
       console.log("Recept sparat!", result);
-      navigate(`/JS3-exam/recipes/${result._id}`);
+      navigate(`/JS3-exam/recipes/${result._id}`); // Recipe get a ID
     } catch (err) {
       console.error(err);
       alert("Kunde inte spara recept.");
@@ -123,8 +130,8 @@ export const CreateRecipeSide = () => {
 
         <article className="Inputfields">
           <label>Titel</label>
-          <input 
-            id="titleLabel" //För testning i cypress
+          <input
+            id="titleLabel" //For testing in cypress
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -132,7 +139,7 @@ export const CreateRecipeSide = () => {
 
           <label>Beskrivning</label>
           <textarea
-          id="decsriptionLabel" //För testning i cypress
+            id="decsriptionLabel" //For testing in cypress
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -176,19 +183,19 @@ export const CreateRecipeSide = () => {
           <div className="detailsContainer">
             <label>Tid (min)</label>
             <input
-            id="timeToCook" //Testning i cypress
+              id="timeToCook" //Testing in cypress
               type="number"
               value={timeToCook}
               onChange={(e) => {
                 const val = e.target.value;
-                setTimeToCook(val === "" ? "" : parseInt(val))
+                setTimeToCook(val === "" ? "" : parseInt(val));
               }}
             />
 
             <label>Portioner</label>
 
-            <input
-            id="setPortions" //Testning i cypress
+            <input // Input value for the cook time. Fecthing the portion function to make user be able to set new value.
+              id="setPortions" //Testning i cypress
               type="number"
               value={portions}
               onChange={(e) => {
@@ -198,41 +205,50 @@ export const CreateRecipeSide = () => {
             />
           </div>
 
+          {/* Returns inputs and buttons making it possible to add and remove both ingredients and instructions. */}
           <section className="listContainer">
             <div className="ingredientContainer">
               <h3>Ingredienser</h3>
               <ul>
-                {ingredients.map((ingredient, index) => (
-                  <li key={index} id="ingredientLi">
-                    <input
-                      type="text"
-                      value={ingredient}
-                      onChange={(e) => {
-                        const updated = [...ingredients];
-                        updated[index] = e.target.value;
-                        setIngredients(updated);
-                      }}
-                    />
-                    <button
-                      className="removeButton"
-                      onClick={() => handleRemoveIngredient(index)}
-                    >
-                      ❌
-                    </button>
-                  </li>
-                ))}
+                {ingredients.map(
+                  (
+                    ingredient,
+                    index // Function for the input field for ingredients. Updates when user add text.
+                  ) => (
+                    <li key={index} id="ingredientLi">
+                      <input
+                        type="text"
+                        value={ingredient}
+                        onChange={(e) => {
+                          // cbase function making it possible to hange value on input field from start value to updated one.
+                          const updated = [...ingredients];
+                          updated[index] = e.target.value;
+                          setIngredients(updated);
+                        }}
+                      />
+                      <button // Remove button function with onClick that handle the handleRemoveIngredient function created higher up in code.
+                        className="removeButton"
+                        onClick={() => handleRemoveIngredient(index)}
+                      >
+                        ❌
+                      </button>
+                    </li>
+                  )
+                )}
               </ul>
 
-              <input
-              id="ingredientInput" //Testning i cypress
+              <input // Handle the new ingredient input and changes the value from start value to the nes one when clicking the #addBtn.
+                id="ingredientInput" //Testing i cypress
                 type="text"
                 placeholder="Ny ingrediens"
                 value={newIngredient}
                 onChange={(e) => setNewIngredient(e.target.value)}
               />
-              <button id="addBtn" onClick={handleAddIngredient}>➕ Lägg till</button>
+              <button id="addBtn" onClick={handleAddIngredient}>
+                ➕ Lägg till
+              </button>
             </div>
-
+            {/* this section works like the add ingredient feature. */}
             <div className="instructionsContainer">
               <h3>Instruktioner</h3>
               <ul>
@@ -258,16 +274,18 @@ export const CreateRecipeSide = () => {
               </ul>
 
               <input
-              id="doThisInput" //Testning i cypress
+                id="doThisInput" //Testing i cypress
                 type="text"
                 placeholder="Ny instruktion"
                 value={newInstruction}
                 onChange={(e) => setNewInstruction(e.target.value)}
               />
-              <button id="addDoThisBtn" onClick={handleAddInstruction}>➕ Lägg till</button>
+              <button id="addDoThisBtn" onClick={handleAddInstruction}>
+                ➕ Lägg till
+              </button>
             </div>
           </section>
-
+          {/* Save button that cuses the save function when being clicked */}
           <button id="saveRecipeBtn" onClick={handleSave} className="saveBtn">
             💾 Spara recept
           </button>

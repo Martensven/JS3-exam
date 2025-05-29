@@ -1,6 +1,5 @@
-/* @media (max-width: 450px) { */
-
-.headerNav {
+/* Styling for all the components in the header */
+.headerNav { 
     font-family: Inter;
     text-align: center;
     margin: 0;
@@ -70,9 +69,7 @@
     rotate: 10deg;
 }
 
-/* } */
 
-@media (min-width: 450px) {
 
 @media (min-width: 375px) {
     .kockmössan {

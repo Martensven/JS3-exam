@@ -1,4 +1,4 @@
-
+/* Style or startside, including the welcome text and also the picture of a meal. */
 .startSideContainer {
     display: flex;
     flex-direction: column;
