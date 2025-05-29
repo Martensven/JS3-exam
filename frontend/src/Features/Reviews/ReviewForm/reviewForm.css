@@ -1,19 +1,22 @@
+/* Wrapper för att centrera formulärknappen */
 .review-form-wrapper {
   display: flex;
   justify-content: center;
 }
+/* Popup-overlay: täcker hela skärmen och suddar bakgrunden */
 .review-popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); /* mörklägger bakgrund */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 10; /* ovanpå andra element */
 }
+/* Recensionsformuläret inuti popupen */
 .review-form {
   background: white;
   padding: 2rem;
@@ -24,6 +27,7 @@
   flex-direction: column;
   align-items: center;
 }
+/* Titel i formuläret */
 .review-form-title {
   width: 100%;
   background-color: #2b808f;
@@ -35,6 +39,7 @@
   text-align: center;
   border-radius: 8px;
 }
+/* Instruktionstext under titeln */
 .review-subtitle {
   font-family: Inter;
   font-size: 1.1rem;
@@ -43,12 +48,14 @@
   margin: 0;
   padding: 0 2rem;
 }
+/* Wrapper för stjärnknappar */
 .review-stars {
   display: flex;
   justify-content: center;
   gap: 0.2rem;
   padding: 2rem 0;
 }
+/* Knapp för varje stjärna (ej markerad) */
 .star-button {
   background: none;
   border: none;
@@ -57,9 +64,11 @@
   color: #ccc;
   transition: color 0.2s;
 }
+/* Markerad stjärna (gul) */
 .star-button.selected {
   color: #ffd700;
 }
+/* Namn- och kommentarsfält */
 .review-input,
 .review-textarea {
   padding: 0.5rem;
@@ -68,22 +77,26 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+/* Focus-styling på input(namn)/textarea(kommentar) (när fälten är markerade) */
 .review-input:focus,
 .review-textarea:focus {
   border: 1px solid #2b808f;
   outline: none;
 }
+/* Kommentarsfältet (justerbart i höjd) */
 .review-textarea {
   resize: vertical;
   min-height: 80px;
   min-width: 80%;
   margin: 1rem 0;
 }
+/* Knapparna för "Skicka" och "Avbryt" */
 .review-buttons {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
 }
+/* Gemensam styling för alla knappar */
 .submit-btn,
 .cancel-btn,
 .open-review-form-btn {
@@ -93,25 +106,30 @@
   color: white;
   cursor: pointer;
   border-radius: 3px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* För mjukare zoom-effekt */
 }
+/* Effekt vid hovring: zoomar in */
 .submit-btn:hover,
 .cancel-btn:hover,
 .open-review-form-btn:hover {
   transform: scale(1.1);
 }
+/* Skicka-knapp */
 .submit-btn {
   background-color: #2b808f;
   border: 2px solid #266e7a;
 }
+/* Avbryt-knapp */
 .cancel-btn {
   background-color: rgb(255, 46, 46);
   border: 2px solid rgb(202, 37, 37);
 }
+/* "Lämna recension"-knapp (visas innan formuläret) */
 .open-review-form-btn {
   background-color: #2b808f;
   border: 2px solid #266e7a;
 }
+/* Gemensam styling för feedback-meddelanden */
 .review-success-message,
 .review-error-message {
   text-align: center;
@@ -121,9 +139,11 @@
   margin: 0;
   padding: 2rem;
 }
+/* Grönt meddelande vid lyckad inskickning */
 .review-success-message {
   background-color: rgb(0, 199, 0);
 }
+/* Rött meddelande vid fel vid inskickning */
 .review-error-message {
   background-color: red;
 }
