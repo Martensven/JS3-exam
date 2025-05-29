@@ -1,3 +1,4 @@
+/* Reset: Nollställer marginaler, padding, box-modell och typsnitt för alla element i komponenten */
 .review-container * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: Inter;
   font-size: 1rem;
 }
+/* Wrapper för hela komponenten, centrerar innehåll vertikalt */
 .review-container {
   width: 100%;
   height: auto;
@@ -13,6 +15,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+/* Rubrik över recensionerna */
 .review-title {
   width: 100%;
   height: auto;
@@ -24,6 +27,7 @@
   font-size: 2.5rem;
   color: white;
 }
+/* Recensionslistan (utan punkter, staplad layout) */
 .review-list {
   width: 80%;
   height: auto;
@@ -31,28 +35,34 @@
   display: flex;
   flex-flow: column nowrap;
 }
+/* Enskild recension */
 .review-item {
   width: 100%;
   height: auto;
   display: flex;
   flex-flow: column;
 }
+/* Container för betyg och recensent, ligger bredvid varandra */
 .rating-and-reviewer-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
+/* Betygsfält, ligger på vänster sida av container för betyg och recensent */
 .review-rating {
   width: 50%;
 }
+/* Stil för varje stjärna i betyg */
 .review-rating span {
   font-size: 1.2rem;
 }
+/* Namn på recensent, ligger på vänster sida av container för betyg och recensent */
 .review-reviewer {
   width: 50%;
   text-align: right;
   color: rgba(0, 0, 0, 0.6);
 }
+/* Kommentar för recension */
 .review-comment {
   background-color: #f5f5f5;
   width: 100%;
@@ -63,16 +73,19 @@
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
     inset -2px -2px 5px rgba(255, 255, 255, 0.6);
 }
+/* Datumfält */
 .review-date {
   width: 100%;
   text-align: right;
   color: rgba(0, 0, 0, 0.6);
 }
+/* Separator mellan recensioner (underkant på varje recension) */
 .review-separator {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
   margin: 2rem 0;
 }
+/* Wrapper för sidnavigeringsknappar */
 .pagination {
   display: flex;
   justify-content: center;
@@ -80,8 +93,9 @@
   gap: 1rem;
   margin: 1rem 0;
 }
+/* Grundstil för sidnavigeringsknappar */
 .pagination-button {
-  all: unset;
+  all: unset; /* Tar bort all standard-styling för buttons */
   width: 4.5rem;
   height: 4.5rem;
   padding: 0;
@@ -96,15 +110,18 @@
   user-select: none;
   border: 2px solid #266e7a;
   border-radius: 50%;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease; /* För mjukare hover-effekter */
 }
+/* Hover-effekt för sidnavigeringsknappar */
 .pagination-button:hover {
   transform: scale(1.1);
 }
+/* När sidnavigeringsknappen är inaktiv: gråare och ingen pointer-cursor */
 .pagination-button:disabled {
   opacity: 0.4;
   cursor: default;
 }
+/* Sidnummer mellan knappar */
 .pagination-page-number {
   font-size: 1.2rem;
   display: flex;
@@ -113,6 +130,7 @@
   padding: 1rem;
   height: 100%;
 }
+/* Wrapper för separat "tillbaka till början"-knapp */
 .pagination-back-to-start {
   display: flex;
   justify-content: center;
