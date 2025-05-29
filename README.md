@@ -1,28 +1,81 @@
-# JS3-exam
-## Grupp 5. 
+# JS3-exam, Grupp 5. 
 
+## Introduction
+This is a recipe app that we have created with Sanity as a headless CMS and React in the frontend. 
+```
+You can:
+- find all kinds of recipes through our top 10 rated or by category
+- sort by rating, time to cook and alphabetical order
+- You can edit or create your own recipes aswell as leave a rating and/or comment
+```
+# Dependencies
+Frontend:
+```
+@sanity/client
+aos
+react
+react-dom
+react-icons
+react-router
+react-router-dom
+```
+Frontend devDependencies:
+```
+@eslint/js
+@types/react
+@types/react-dom
+@vitejs/plugin-react
+cypress
+cypress-vite
+eslint
+eslint-plugin-react-hooks
+eslint-plugin-react-refresh
+globals
+vite
+```
+Backend (as a Service)
+```
+@sanity/vision
+react
+react-dom
+react-is
+sanity"
+styled-components
+url
+```
+Backend (as a Service) devDependencies:
+```
+@sanity/eslint-config-studio
+@types/react
+eslint
+typescript
+```
 # Instructions to run:
+```
 1. cd BaaS-Sanity
 2. npm install
 3. cd ../frontend
 4. npm install
-
 5. Open three bash-terminals:
-
+```
 ### To start the BaaS/Headless CMS
+```
 1. cd BaaS-Sanity
 2. npm run dev (opens at http://localhost:3333/)
-
+```
 ### To view frontend:
-1. cd frontend (opens at http://localhost:5173/JS3-exam/)
-2. npm run dev
-
+```
+1. cd frontend 
+2. npm run dev (opens at http://localhost:5173/JS3-exam/)
+```
 ### To run tests:
+```
 1. cd frontend
 2. npx cypress open
 3. Select E2E Testing
-4. Select Chrome and "Start E2E testing in Chrome
+4. Select Chrome and "Start E2E testing in Chrome"
 5. Select the test you want to run 
+```
 
 ## Trello 
 https://trello.com/invite/b/681deffa2db3e66c1d3bb981/ATTIddde1c5fa7ccb21b6f2bcbc902a0f54a6121EF6D/js3-grupp-5-mat-och-ater-mat

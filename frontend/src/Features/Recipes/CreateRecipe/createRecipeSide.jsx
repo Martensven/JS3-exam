@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 export const CreateRecipeSide = () => {
   const navigate = useNavigate();
 
-  const [allCategories, setAllCategories] = useState([]);
+  const [allCategories, setAllCategories] = useState([]); 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [timeToCook, setTimeToCook] = useState("");
@@ -123,7 +123,8 @@ export const CreateRecipeSide = () => {
 
         <article className="Inputfields">
           <label>Titel</label>
-          <input
+          <input 
+            id="titleLabel" //För testning i cypress
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -131,6 +132,7 @@ export const CreateRecipeSide = () => {
 
           <label>Beskrivning</label>
           <textarea
+          id="decsriptionLabel" //För testning i cypress
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -174,6 +176,7 @@ export const CreateRecipeSide = () => {
           <div className="detailsContainer">
             <label>Tid (min)</label>
             <input
+            id="timeToCook" //Testning i cypress
               type="number"
               value={timeToCook}
               onChange={(e) => {
@@ -185,6 +188,7 @@ export const CreateRecipeSide = () => {
             <label>Portioner</label>
 
             <input
+            id="setPortions" //Testning i cypress
               type="number"
               value={portions}
               onChange={(e) => {
@@ -199,7 +203,7 @@ export const CreateRecipeSide = () => {
               <h3>Ingredienser</h3>
               <ul>
                 {ingredients.map((ingredient, index) => (
-                  <li key={index}>
+                  <li key={index} id="ingredientLi">
                     <input
                       type="text"
                       value={ingredient}
@@ -220,12 +224,13 @@ export const CreateRecipeSide = () => {
               </ul>
 
               <input
+              id="ingredientInput" //Testning i cypress
                 type="text"
                 placeholder="Ny ingrediens"
                 value={newIngredient}
                 onChange={(e) => setNewIngredient(e.target.value)}
               />
-              <button onClick={handleAddIngredient}>➕ Lägg till</button>
+              <button id="addBtn" onClick={handleAddIngredient}>➕ Lägg till</button>
             </div>
 
             <div className="instructionsContainer">
@@ -253,16 +258,17 @@ export const CreateRecipeSide = () => {
               </ul>
 
               <input
+              id="doThisInput" //Testning i cypress
                 type="text"
                 placeholder="Ny instruktion"
                 value={newInstruction}
                 onChange={(e) => setNewInstruction(e.target.value)}
               />
-              <button onClick={handleAddInstruction}>➕ Lägg till</button>
+              <button id="addDoThisBtn" onClick={handleAddInstruction}>➕ Lägg till</button>
             </div>
           </section>
 
-          <button onClick={handleSave} className="saveBtn">
+          <button id="saveRecipeBtn" onClick={handleSave} className="saveBtn">
             💾 Spara recept
           </button>
         </article>

@@ -6,7 +6,7 @@ export const TopTen = () => {
   return (
     <article className="TopTenContainer">
         <p>Se våra Top10 rankade recept</p>
-        <Link to='/JS3-Exam/top-rated/'><button><PiSneakerMoveDuotone /></button></Link>
+        <Link to='/JS3-Exam/top-rated/'><button className="topRatedBtn"><PiSneakerMoveDuotone /></button></Link>
     </article>
   
 );
