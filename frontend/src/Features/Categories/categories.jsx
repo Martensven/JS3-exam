@@ -15,10 +15,10 @@ export const Categories = () => {
     });
     const fetchCategories = async () => { // Funktion för att hämta kategorier från Sanity
       const query = `*[_type == "category"]{title}`; // Sanity query för att hämta alla kategorier
-      const fetchedCategories = await client.fetch(query); // Hämta kategorierna
+      const fetchedCategories = await client.fetch(query); // Spar resultatet från Sanity i fetchedCategories
 
       const predefinedOrder = [
-        // Fördefinerad ordning på kategorierna
+        // Fördefinerad ordning på kategorierna så att de visas i rätt ordning
         "Frukost",
         "Lunch",
         "Förrätt",
@@ -27,7 +27,7 @@ export const Categories = () => {
         "Dryck",
       ];
 
-      const sortedCategories = fetchedCategories.sort((a, b) => { // Sortera kategorierna i fördefinierad ordning
+      const sortedCategories = fetchedCategories.sort((a, b) => { // Sortera kategorierna i fördefinierad
         return (
           predefinedOrder.indexOf(a.title) - predefinedOrder.indexOf(b.title) // Om kategorin inte finns i den fördefinierade listan, sätt den sist
         );
@@ -74,7 +74,7 @@ export const Categories = () => {
                   })`,
               }}
               data-aos="fade-up" // AOS animation
-              // data-aos-delay={index > 4 * 600}
+              // Ett försök att snygga till en fördröjning på animationen
               data-aos-delay={index < 3 ? index * 300 : 0}
             >
               {category.title}
