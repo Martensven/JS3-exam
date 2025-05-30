@@ -1,6 +1,6 @@
 import './header.css'
-import { LOGO } from './LOGO'
-import { NavButtons } from './NavButtons'
+import { LOGO } from './LOGO' //Logo component 
+import { NavButtons } from './NavButtons' // Nav Buttons as startside and recipe button
 import KockmössanImg from "../../assets/Kockmössan.jpg"
 
 export const Header = () => {
@@ -9,7 +9,7 @@ export const Header = () => {
         <>
             <div className='headerContainer'>
                 <LOGO />
-                <img src={KockmössanImg} alt='Kockmössan' className='kockmössan' />
+                <img src={KockmössanImg} alt='Kockmössan' className='kockmössan' /> 
             </div>
 
             <nav className="headerNav">

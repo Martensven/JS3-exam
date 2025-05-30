@@ -201,6 +201,7 @@ export const RecipesEdit = () => {
                     <li key={category._id}>
                         <label>
                             <input
+                                className='checkbox'
                                 id={category.title}
                                 type="checkbox"
                                 checked={selectedCategoryTitles.includes(category.title)}
@@ -252,7 +253,7 @@ export const RecipesEdit = () => {
                                         setIngredients(updated);
                                     }}
                                 />
-                                <button id={'removeIngredient-' + index} onClick={() => handleRemoveIngredient(index)}>❌</button>
+                                <button className='removeIngredient' id={'removeIngredient-' + index} onClick={() => handleRemoveIngredient(index)}>❌</button>
                             </li>
                         ))}
                     </ul>
@@ -283,7 +284,7 @@ export const RecipesEdit = () => {
                                         setInstructions(updated);
                                     }}
                                 />
-                                <button id={'removeInstructionBtn-' + index} onClick={() => handleRemoveInstruction(index)}>❌</button>
+                                <button className='removeInstruction' id={'removeInstructionBtn-' + index} onClick={() => handleRemoveInstruction(index)}>❌</button>
                             </li>
                         ))}
                     </ul>

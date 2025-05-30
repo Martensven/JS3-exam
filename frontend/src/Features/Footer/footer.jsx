@@ -2,7 +2,7 @@ import "./footer.css";
 import { IoLogoGithub } from "react-icons/io";
 import { MdMail } from "react-icons/md";
 
-
+//No Links on the buttons, there for the view. 
 
 export const Footer = () => {
   return (
